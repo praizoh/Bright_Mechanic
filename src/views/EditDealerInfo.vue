@@ -118,12 +118,12 @@ export default {
     methods:{
         save(){
             if(this.$refs.form.validate()){
-                console.log(this.itemName)
+                //console.log(this.itemName)
                 alert('submitted')
             }
         },
         cancel(){
-            alert(cancelled)
+            alert('cancelled')
         }
     }
     

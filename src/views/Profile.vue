@@ -19,7 +19,7 @@
                 <v-subheader class="mt-n3 ml-7">Change Picture</v-subheader>  
             </div> 
         </v-row>
-        <v-row>
+        <v-row align="center" justify="center">
             <v-btn Large white--text>Reset Password</v-btn>
         </v-row>
     </v-container>
