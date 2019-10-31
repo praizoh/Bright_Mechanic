@@ -12,6 +12,20 @@ export default new Vuex.Store({
       { companyName: 'Uchendum Shop',  Address:'Shop 34, Computer Village,Ikeja, Lagos' , Phone:'0801 987 4321'},
       { companyName: 'Prestique Cars',  Address:'Shop 34, Computer Village,Ikeja, Lagos' , Phone:'0810 750 8709'},
     ],
+    users:[
+      { name: 'Hafiz Gods-will',  username:'Hafs' , password:'Hafiza', priviledge:'Member'},
+      { name: 'Hafiz Gods-will',  username:'Hafs' , password:'Hafiza', priviledge:'Member'},
+      { name: 'Hafiz Gods-will',  username:'Hafs' , password:'Hafiza', priviledge:'Admin'},
+      { name: 'Hafiz Gods-will',  username:'Hafs' , password:'Hafiza', priviledge:'Member'},
+      { name: 'Hafiz Gods-will',  username:'Hafs' , password:'Hafiza', priviledge:'Member'},
+      { name: 'Hafiz Gods-will',  username:'Hafs' , password:'Hafiza', priviledge:'Admin'},
+      { name: 'Hafiz Gods-will',  username:'Hafs' , password:'Hafiza', priviledge:'Member'},
+      { name: 'Hafiz Gods-will',  username:'Hafs' , password:'Hafiza', priviledge:'Member'},
+      { name: 'Hafiz Gods-will',  username:'Hafs' , password:'Hafiza', priviledge:'Member'},
+      { name: 'Hafiz Gods-will',  username:'Hafs' , password:'Hafiza', priviledge:'Admin'},
+      { name: 'Hafiz Gods-will',  username:'Hafs' , password:'Hafiza', priviledge:'Member'},
+      
+    ],
   },
   mutations: {
     

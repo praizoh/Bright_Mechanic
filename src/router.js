@@ -10,6 +10,7 @@ import EditDealerInfo from './views/EditDealerInfo.vue'
 import AttendLit from './views/AttendLit.vue'
 import AttendLitFree from './views/AttendLitFree.vue'
 import AttendLitPaid from './views/AttendLitPaid.vue'
+import ManageUser from './views/ManageUser.vue'
 
 Vue.use(Router)
 
@@ -66,6 +67,11 @@ export default new Router({
       path: '/editDealerInfo',
       name: 'editDealerInfo',
       component: EditDealerInfo
+    },
+    {
+      path: '/manageUsers',
+      name: 'manageUsers',
+      component: ManageUser
     },
    
     {

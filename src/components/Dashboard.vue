@@ -52,6 +52,7 @@ export default {
                 { text: 'Items',  route:'/item', icon:'mdi-tools' },
                 { text: 'Dealers',  route: '/dealers', icon:'mdi-account' },
                 { text: 'Profile',  route:'/profile', icon:'mdi-account' },
+                { text: 'Manage Users',  route:'/manageUsers', icon:'mdi-account' },
                 
             ],
   }),
