@@ -1,0 +1,76 @@
+<template>
+   <nav>
+       <v-app-bar clipped app>
+        <v-app-bar-nav-icon class="grey--text" @click="drawer = !drawer"></v-app-bar-nav-icon>
+         
+         <v-text-field
+            placeholder="Placeholder"
+            solo
+          ></v-text-field>
+         
+         
+         <v-spacer></v-spacer>
+
+            <v-btn color="grey" text>
+                <span>Sign Out</span>
+                <v-icon right>mdi-heart</v-icon>
+            </v-btn>
+            <v-btn color="grey" text>
+                <span>Sign Out</span>
+                <v-icon right>mdi-heart</v-icon>
+            </v-btn>
+       </v-app-bar>
+
+       <v-navigation-drawer
+      v-model="drawer"
+      app
+       width="180"
+      
+    >
+
+     <v-layout column align-center>
+                <v-flex class="mt-5">
+                  <p class="mt-1">
+                      crolit logo
+                  </p>
+                </v-flex>
+            </v-layout>
+         <v-list dense >
+            <v-list-item  v-for="link in links" :key="link.text" router :to="link.route">
+                <v-list-item-content>
+                  <v-list-item-title class='text-center font-regular' >
+                     {{link.text}}
+                  </v-list-item-title>
+                </v-list-item-content>
+
+                
+            </v-list-item>
+            </v-list>
+    </v-navigation-drawer>
+
+    <!-- <v-content>
+
+    </v-content> -->
+  </nav>
+</template>
+
+<script>
+  export default {
+    data(){
+      return{
+        drawer: null,
+      links:[
+                { text: 'Dashboard',  route:'/' },
+                { text: 'Crolit',  route: '/crolit' },
+                { text: 'Attend Lit',  route:'/attendLit' },
+                { text: 'Wallet',  route:'/wallet' },
+                { text: 'Venue',  route:'/venue' },
+                { text: 'Volunteer',  route:'/volunteer' },
+            ],
+      }
+    
+  }
+  }
+</script>
+       </nav>
+       </template>
