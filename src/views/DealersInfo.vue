@@ -21,7 +21,7 @@
             <v-toolbar color="white" class="mb-0 mr-10 mt-4" height="30" flat>
             <v-spacer>
             </v-spacer>
-           <v-btn icon class="mr-n12" to='/editDealerInfo'>
+           <v-btn icon class="mr-n12" to='/dealers/editDealerInfo'>
                 <v-icon color="grey">mdi-pencil</v-icon>
                 
             </v-btn>
@@ -117,7 +117,7 @@
                 <v-toolbar flat class="mt-12">
                     <v-toolbar-title>Items</v-toolbar-title>
                     <v-spacer></v-spacer>
-                    <v-btn large class="white--text grey" to='/addItem'>
+                    <v-btn large class="white--text grey" to='/dealers/addItem'>
                         <v-icon>mdi-plus</v-icon> <span> Add Items</span>
                     </v-btn>
                 </v-toolbar>

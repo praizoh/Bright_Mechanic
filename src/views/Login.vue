@@ -13,20 +13,20 @@
             :class="{'mx-auto': $vuetify.breakpoint.mdAndDown, 'pa-7': $vuetify.breakpoint.lgAndDown}"
             >
                 <v-toolbar flat color="white">
-                    <v-toolbar-title class="font-weight-bold" style="color:#080838">Login</v-toolbar-title>
+                    <v-toolbar-title class="font-weight-bold display-1" style="color:#080E53">Login</v-toolbar-title>
                 </v-toolbar>
                 <v-card-text>
                     <v-form>
                         <v-text-field  outlined label="Username" name="username" v-model="username" prepend-inner-icon="mdi-account" type="text">
 
                         </v-text-field>
-                        <v-text-field  outlined label="Password" name="password" v-model="password" prepend-inner-icon="mdi-lock" type="password">
+                        <v-text-field  class="mt-7" outlined label="Password" name="password" v-model="password" prepend-inner-icon="mdi-lock" type="password">
 
                         </v-text-field>
                     </v-form>
                 </v-card-text>
                 <v-card-actions>
-                    <v-btn large color="#080838" class="white--text text-none ml-2" @click="login()">
+                    <v-btn width="100" large color="#080E53" class="white--text text-none ml-2 font-weight-bold title" @click="login()">
                         Login
                     </v-btn>
                 </v-card-actions>
@@ -67,7 +67,7 @@ export default {
 
 <style scoped>
 #item{
-    background-color: #080838 !important;
+    background-color: #080E53 !important;
     min-height:100vh;
 }
 

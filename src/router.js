@@ -44,12 +44,12 @@ export default new Router({
       component: Dealers
     },
     {
-      path: '/dealerInfo',
+      path: '/dealers/dealerInfo',
       name: 'dealerInfo',
       component: DealersInfo
     },
     {
-      path: '/addItem',
+      path: '/item/addItem',
       name: 'addItem',
       component: AddItem
     },
@@ -64,7 +64,7 @@ export default new Router({
       component: Profile
     },
     {
-      path: '/editDealerInfo',
+      path: '/dealers/editDealerInfo',
       name: 'editDealerInfo',
       component: EditDealerInfo
     },

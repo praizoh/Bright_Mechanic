@@ -2,14 +2,14 @@
 <div>
     <Dashboard/>
      <v-container>
-        <v-toolbar color="white" class="mb-0" height="30" flat>
+        <v-toolbar color="white" class="mb-0" height="30" flat app>
             <v-toolbar-title>
                 Dealers
             </v-toolbar-title>
             <v-spacer>
             </v-spacer>
             <v-avatar
-                size="30px"
+                size="30px"         
                 class="mr-10 ml-2"
             >
                 <img
@@ -36,10 +36,10 @@
                 
             </v-col>
         </v-row>
-        <v-container class="mt-n4">
-        <v-row v-for="dealer in dealers" :key="dealer.phone">
-            <v-col cols="12" lg="11" md="6" sm="6" class="mt-n2">
-        <v-card hover class="ml-12 mr-12" flat  tile  to="/dealerInfo">
+        <v-container class="mt-n4" v-for="dealer in dealers" :key="dealer.phone">
+        <v-row>
+            <v-col cols="12" lg="11" md="11" sm="9" class="mt-n2 mb-0 pb-0">
+        <v-card hover class="ml-12 mr-12 mb-0" flat  tile  to="/dealers/dealerInfo">
        <v-row justify="space-around">
            <v-col cols="12" lg="5" md="6" sm="6" class="mt-n4">
                <v-subheader>Company Name</v-subheader>
@@ -66,10 +66,10 @@
            </v-col> -->
            
        </v-row>
-       <v-divider></v-divider>
+       
         </v-card>
         </v-col>
-        <v-col cols="12" lg="1" md="6" sm="6" class="mt-n2">
+        <v-col cols="12" lg="1" md="1" sm="1" class="mt-n2">
             <v-dialog v-model="dialog" persistent max-width="300" hide-overlay overlay-color="white">
             <template v-slot:activator="{ on }">
             <v-btn icon class="mr-2 mt-7" v-on="on">
@@ -86,7 +86,9 @@
             </v-card>
         </v-dialog>
         </v-col>
+        
         </v-row>
+        <v-divider class="mt-0"></v-divider>
         </v-container>
         
     </v-container>

@@ -3,8 +3,10 @@
   <v-navigation-drawer
     v-model="drawer"
     app
-    color="#080838"
-      
+    color="#080E53"
+    :expand-on-hover="$vuetify.breakpoint.smAndDown"
+    permanent
+    floating
   >
 
   <v-layout column align-center>
@@ -23,7 +25,7 @@
         </v-list-item-title>
       </v-list-item-content>
     </v-list-item>
-    <v-list-item style="margin-top:250px">
+    <v-list-item style="margin-top:200px">
       <v-list-item-icon>
         <v-icon color="white">mdi-heart</v-icon>
       </v-list-item-icon>

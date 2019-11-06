@@ -25,6 +25,7 @@ export default {
 #item{
   background-color:white !important;
   min-height:100vh;
+  font-family: Raleway;
 }
 
 </style>
