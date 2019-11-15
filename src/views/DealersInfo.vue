@@ -2,9 +2,12 @@
     <div>
         <Dashboard/>
         <v-container>
-            <v-toolbar color="white" class="mb-0" height="30" flat>
-            <v-toolbar-title style="font-size: 25px;color: #B1AFCE;">
-                Dealers/ <span style="font-size: 20px;color: #B1AFCE;">Dealer Info </span>
+            <v-toolbar color="white" class="mb-0 mt-2" height="30" flat>
+            <v-toolbar-title class="res1 font-weight-black">
+                
+                Dealers/ Dealers Info
+            
+                
             </v-toolbar-title>
             <v-spacer>
             </v-spacer>
@@ -25,8 +28,8 @@
                 <v-icon color="grey">mdi-pencil</v-icon>
                 
             </v-btn>
-            <v-subheader class="mt-10">Edit</v-subheader>
-                <v-dialog v-model="dialog1" persistent max-width="400" overlay-color="#080E53">
+            <v-subheader class="mt-10 res1">Edit</v-subheader>
+                <v-dialog v-model="dialog1" persistent max-width="400" overlay-color="white">
                     <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
                         <v-icon color="red">mdi-delete</v-icon>
@@ -35,9 +38,9 @@
                     <v-card  class="pa-7">
                         <v-card-text class="font-weight-black text-center">Are you sure you want to delete Benson Car Parts. All items record will be deleted too.</v-card-text>
                         <v-card-action>
-                            <v-btn color="grey" dark @click="dialog1 = false">No</v-btn>
+                            <v-btn color="#B1AFCE" dark @click="dialog1 = false">No</v-btn>
                             
-                            <v-btn color="grey" dark class="float-right" @click="dialog1 = false">Yes</v-btn>
+                            <v-btn color="#B1AFCE" dark class="float-right" @click="dialog1 = false">Yes</v-btn>
                         </v-card-action>
                     </v-card>
                 </v-dialog>
@@ -46,68 +49,68 @@
                 <v-card  flat v-for="info in dealer" :key="info.companyName">
                     <v-row no-gutters>
                         <v-col cols="12" lg="3" md="6" sm="6">
-                            <v-subheader>Company Name</v-subheader>
+                            <v-subheader class="res1">Company Name</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="font-weight-black">{{info.companyName}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{info.companyName}}</v-card-text>
                         </v-col>
                     
                     </v-row>
                     <v-divider></v-divider>
                     <v-row no-gutters>
                         <v-col cols="12" lg="3" md="6" sm="6">
-                            <v-subheader>Alis</v-subheader>
+                            <v-subheader class="res1">Alis</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="font-weight-black">{{info.alis}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{info.alis}}</v-card-text>
                         </v-col>
                     </v-row>
                     <v-divider></v-divider>
                     <v-row no-gutters>
                         <v-col cols="12" lg="3" md="6" sm="6">
-                            <v-subheader>Phone Number</v-subheader>
+                            <v-subheader class="res1">Phone Number</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="font-weight-black">{{info.phoneNumber}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{info.phoneNumber}}</v-card-text>
                         </v-col>
                     
                     </v-row>
                     <v-divider></v-divider>
                     <v-row no-gutters>
                         <v-col cols="12" lg="3" md="6" sm="6">
-                            <v-subheader>Email</v-subheader>
+                            <v-subheader class="res1">Email</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="font-weight-black">{{info.email}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{info.email}}</v-card-text>
                         </v-col>
                     
                     </v-row>
                     <v-divider></v-divider>
                     <v-row no-gutters>
                         <v-col cols="12" lg="3" md="6" sm="6">
-                            <v-subheader>Address</v-subheader>
+                            <v-subheader class="res1">Address</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="font-weight-black">{{info.address}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{info.address}}</v-card-text>
                         </v-col>
                     
                     </v-row>
                     <v-divider></v-divider>
                     <v-row no-gutters>
                         <v-col cols="12" lg="3" md="6" sm="6">
-                            <v-subheader>Note</v-subheader>
+                            <v-subheader class="res1">Note</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="font-weight-black">{{info.note}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{info.note}}</v-card-text>
                         </v-col>
                     </v-row>
                     <v-divider></v-divider>
                     <v-row no-gutters>
                         <v-col cols="12" lg="3" md="6" sm="6">
-                            <v-subheader>Description</v-subheader>
+                            <v-subheader class="res1">Description</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="font-weight-black">{{info.description}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{info.description}}</v-card-text>
                         </v-col>
                     
                     </v-row>
@@ -115,7 +118,7 @@
                 </v-card>
 
                 <v-toolbar flat class="mt-12">
-                    <v-toolbar-title style="color:#B1AFCE">Items</v-toolbar-title>
+                    <v-toolbar-title style="color:#B1AFCE" class="font-weight-black">Items</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-btn large class="white--text" to='/dealers/addItem' style="background-color:#B1AFCE">
                         <v-icon>mdi-plus</v-icon> <span > Add Items</span>
@@ -130,24 +133,24 @@
                         
                         <v-row justify="space-around">
                             <v-col cols="12" lg="2" md="3" sm="6" class="mt-n4">
-                                <v-subheader>Name</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black">{{item.name}}</v-card-text>
+                                <v-subheader class="res1">Name</v-subheader>
+                                <v-card-text class="mt-n4 res2 font-weight-black">{{item.name}}</v-card-text>
                             </v-col>
                             <v-col cols="12" lg="2" md="3" sm="6" class="mt-n4">
-                                <v-subheader>Part Number</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black">{{item.partNumber}}</v-card-text>
+                                <v-subheader class="res1">Part Number</v-subheader>
+                                <v-card-text class="mt-n4 res2 font-weight-black">{{item.partNumber}}</v-card-text>
                             </v-col>
                             <v-col cols="12" lg="2" md="4" sm="6" class="mt-n4">
-                                <v-subheader>Condition</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black">{{item.condition}}</v-card-text>
+                                <v-subheader class="res1">Condition</v-subheader>
+                                <v-card-text class="mt-n4 res2 font-weight-black">{{item.condition}}</v-card-text>
                             </v-col>
                             <v-col cols="12" lg="2" md="4" sm="6" class="mt-n4">
-                                <v-subheader>Dealer Price</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black">{{item.dealerPrice}}</v-card-text>
+                                <v-subheader class="res1">Dealer Price</v-subheader>
+                                <v-card-text class="mt-n4 res2 font-weight-black">{{item.dealerPrice}}</v-card-text>
                             </v-col>
                             <v-col cols="12" lg="2" md="4" sm="6" class="mt-n4">
-                                <v-subheader>Retail Price</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black">{{item.retailPrice}}</v-card-text>
+                                <v-subheader class="res1">Retail Price</v-subheader>
+                                <v-card-text class="mt-n4 res2 font-weight-black">{{item.retailPrice}}</v-card-text>
                             </v-col>
                             <v-col cols="12" lg="2" md="4" sm="6" class="mt-n2">
                                 <v-btn icon class="mr-2 mt-7 d-none d-sm-none d-md-none d-lg-inline">
@@ -177,18 +180,18 @@
                             <v-col cols="12" lg="6" md="6" sm="12">
                         <v-row>
                             <v-col cols="12" lg="8" md="8" sm="6" class="mt-n4">
-                                <v-subheader>Brand</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black">{{item.brand}}</v-card-text>
+                                <v-subheader class="res1">Brand</v-subheader>
+                                <v-card-text class="mt-n4 res2 font-weight-black">{{item.brand}}</v-card-text>
                             </v-col>
                             <v-col cols="12" lg="4" md="4" sm="6" class="mt-n4" justify="center">
-                                <v-subheader>Spec</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black">{{item.spec}}</v-card-text>
+                                <v-subheader class="res1">Spec</v-subheader>
+                                <v-card-text class="mt-n4 res2 font-weight-black">{{item.spec}}</v-card-text>
                             </v-col>
                         </v-row>
                         <v-row>
                             <v-col cols="12" lg="8" md="12" sm="12" class="mt-n4">
-                                <v-subheader>Category</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black">{{item.category}}</v-card-text>
+                                <v-subheader class="res1">Category</v-subheader>
+                                <v-card-text class="mt-n4 res2 font-weight-black">{{item.category}}</v-card-text>
                             </v-col>
                              <v-col cols="12" lg="4" md="12" sm="12" class="mt-n2 d-none d-sm-none d-md-block d-lg-none float-right" >
                                 <v-btn icon class="mr-2 mt-7">
@@ -339,5 +342,15 @@ export default {
 </script>
 
 <style scoped>
+.res1{
+font-family: Raleway;
 
+color: #B1AFCE
+}
+.res2{
+font-weight: bolder;
+/* font-size: 15px; */
+font-family: Raleway;
+color: black;
+}
 </style>
