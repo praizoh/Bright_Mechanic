@@ -3,8 +3,8 @@
         <Dashboard/>
         <v-container>
             <v-toolbar color="white" class="mb-0" height="30" flat>
-            <v-toolbar-title>
-                Dealers/Dealer Info
+            <v-toolbar-title style="font-size: 25px;color: #B1AFCE;">
+                Dealers/ <span style="font-size: 20px;color: #B1AFCE;">Dealer Info </span>
             </v-toolbar-title>
             <v-spacer>
             </v-spacer>
@@ -26,7 +26,7 @@
                 
             </v-btn>
             <v-subheader class="mt-10">Edit</v-subheader>
-                <v-dialog v-model="dialog" persistent max-width="300" hide-overlay overlay-color="white">
+                <v-dialog v-model="dialog1" persistent max-width="400" overlay-color="#080E53">
                     <template v-slot:activator="{ on }">
                     <v-btn icon v-on="on">
                         <v-icon color="red">mdi-delete</v-icon>
@@ -35,14 +35,14 @@
                     <v-card  class="pa-7">
                         <v-card-text class="font-weight-black text-center">Are you sure you want to delete Benson Car Parts. All items record will be deleted too.</v-card-text>
                         <v-card-action>
-                            <v-btn color="grey" dark @click="dialog = false">No</v-btn>
+                            <v-btn color="grey" dark @click="dialog1 = false">No</v-btn>
                             
-                            <v-btn color="grey" dark class="float-right" @click="dialog = false">Yes</v-btn>
+                            <v-btn color="grey" dark class="float-right" @click="dialog1 = false">Yes</v-btn>
                         </v-card-action>
                     </v-card>
                 </v-dialog>
             </v-toolbar>
-            <v-container>
+            <v-container mt-8>
                 <v-card  flat v-for="info in dealer" :key="info.companyName">
                     <v-row no-gutters>
                         <v-col cols="12" lg="3" md="6" sm="6">
@@ -115,10 +115,10 @@
                 </v-card>
 
                 <v-toolbar flat class="mt-12">
-                    <v-toolbar-title>Items</v-toolbar-title>
+                    <v-toolbar-title style="color:#B1AFCE">Items</v-toolbar-title>
                     <v-spacer></v-spacer>
-                    <v-btn large class="white--text grey" to='/dealers/addItem'>
-                        <v-icon>mdi-plus</v-icon> <span> Add Items</span>
+                    <v-btn large class="white--text" to='/dealers/addItem' style="background-color:#B1AFCE">
+                        <v-icon>mdi-plus</v-icon> <span > Add Items</span>
                     </v-btn>
                 </v-toolbar>
 
@@ -129,37 +129,33 @@
                     <v-expansion-panel-header>
                         
                         <v-row justify="space-around">
-                            <v-col cols="12" lg="2" md="6" sm="6" class="mt-n4">
+                            <v-col cols="12" lg="2" md="3" sm="6" class="mt-n4">
                                 <v-subheader>Name</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black text-truncate">{{item.name}}</v-card-text>
+                                <v-card-text class="mt-n4 font-weight-black">{{item.name}}</v-card-text>
                             </v-col>
-                            <v-col cols="12" lg="2" md="6" sm="6" class="mt-n4">
+                            <v-col cols="12" lg="2" md="3" sm="6" class="mt-n4">
                                 <v-subheader>Part Number</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black text-truncate">{{item.partNumber}}</v-card-text>
+                                <v-card-text class="mt-n4 font-weight-black">{{item.partNumber}}</v-card-text>
                             </v-col>
-                            <v-col cols="12" lg="2" md="6" sm="6" class="mt-n4">
+                            <v-col cols="12" lg="2" md="4" sm="6" class="mt-n4">
                                 <v-subheader>Condition</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black  text-truncate">{{item.condition}}</v-card-text>
+                                <v-card-text class="mt-n4 font-weight-black">{{item.condition}}</v-card-text>
                             </v-col>
-                            <v-col cols="12" lg="2" md="6" sm="6" class="mt-n4">
+                            <v-col cols="12" lg="2" md="4" sm="6" class="mt-n4">
                                 <v-subheader>Dealer Price</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black text-truncate">{{item.dealerPrice}}</v-card-text>
+                                <v-card-text class="mt-n4 font-weight-black">{{item.dealerPrice}}</v-card-text>
                             </v-col>
-                            <v-col cols="12" lg="2" md="6" sm="6" class="mt-n4">
+                            <v-col cols="12" lg="2" md="4" sm="6" class="mt-n4">
                                 <v-subheader>Retail Price</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black text-truncate">{{item.retailPrice}}</v-card-text>
+                                <v-card-text class="mt-n4 font-weight-black">{{item.retailPrice}}</v-card-text>
                             </v-col>
-                            <v-col cols="12" lg="1" md="6" sm="6" class="mt-n2">
-                                <v-btn icon class="mr-2 mt-7">
+                            <v-col cols="12" lg="2" md="4" sm="6" class="mt-n2">
+                                <v-btn icon class="mr-2 mt-7 d-none d-sm-none d-md-none d-lg-inline">
                                     <v-icon color="red">mdi-pencil</v-icon>
                                 </v-btn>
-                                
-                            </v-col>
-                            <v-col cols="12" lg="1" md="6" sm="6" class="mt-n2">
-                                
-                                <v-dialog v-model="dialog" persistent max-width="300" hide-overlay overlay-color="white">
+                                <v-dialog v-model="dialog" persistent max-width="400">
                                     <template v-slot:activator="{ on }">
-                                    <v-btn icon class="mr-2 mt-7" v-on="on">
+                                    <v-btn icon class="mr-2 mt-7 d-none d-sm-none d-md-none d-lg-inline" v-on="on">
                                         <v-icon color="red">mdi-delete</v-icon>
                                     </v-btn>
                                     </template>
@@ -172,31 +168,75 @@
                                         </v-card-action>
                                     </v-card>
                                 </v-dialog>
+                                
                             </v-col>
                         </v-row>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
                         <v-row>
-                            <v-col>
+                            <v-col cols="12" lg="6" md="6" sm="12">
                         <v-row>
-                            <v-col cols="12" lg="8" md="6" sm="6" class="mt-n4">
+                            <v-col cols="12" lg="8" md="8" sm="6" class="mt-n4">
                                 <v-subheader>Brand</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black text-truncate">{{item.brand}}</v-card-text>
+                                <v-card-text class="mt-n4 font-weight-black">{{item.brand}}</v-card-text>
                             </v-col>
-                            <v-col cols="12" lg="4" md="6" sm="6" class="mt-n4" justify="center">
+                            <v-col cols="12" lg="4" md="4" sm="6" class="mt-n4" justify="center">
                                 <v-subheader>Spec</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black text-truncate">{{item.spec}}</v-card-text>
+                                <v-card-text class="mt-n4 font-weight-black">{{item.spec}}</v-card-text>
                             </v-col>
                         </v-row>
                         <v-row>
-                            <v-col cols="12" lg="6" md="6" sm="6" class="mt-n4">
+                            <v-col cols="12" lg="8" md="12" sm="12" class="mt-n4">
                                 <v-subheader>Category</v-subheader>
-                                <v-card-text class="mt-n4 font-weight-black text-truncate">{{item.category}}</v-card-text>
+                                <v-card-text class="mt-n4 font-weight-black">{{item.category}}</v-card-text>
+                            </v-col>
+                             <v-col cols="12" lg="4" md="12" sm="12" class="mt-n2 d-none d-sm-none d-md-block d-lg-none float-right" >
+                                <v-btn icon class="mr-2 mt-7">
+                                    <v-icon color="red">mdi-pencil</v-icon>
+                                </v-btn>
+                                <v-dialog v-model="dialog2" persistent max-width="300" hide-overlay overlay-color="white">
+                                    <template v-slot:activator="{ on }">
+                                    <v-btn icon class="mr-2 mt-7" v-on="on">
+                                        <v-icon color="red">mdi-delete</v-icon>
+                                    </v-btn>
+                                    </template>
+                                    <v-card  class="pa-7">
+                                        <v-card-text class="font-weight-black text-center">Are you sure you want to delete fuel pump?</v-card-text>
+                                        <v-card-action>
+                                            <v-btn color="grey" dark @click="dialog2 = false">No</v-btn>
+                                            
+                                            <v-btn color="grey" dark class="float-right" @click="dialog2 = false">Yes</v-btn>
+                                        </v-card-action>
+                                    </v-card>
+                                </v-dialog>
+                                
                             </v-col>
                         </v-row>
                         </v-col>
-                        <v-col>
+                        <v-col cols="12" lg="6" md="6" sm="12">
+                            <!-- :class="{'mt-n12': $vuetify.breakpoint.smAndDown} -->
                             <v-img src='/cab.jpg'  class="mx-auto mt-5" max-height="150" max-width='200'></v-img>
+                            <div class="d-inline d-sm-inline d-md-none d-lg-none float-right">
+                                <v-btn icon class="mr-2 mt-7">
+                                    <v-icon color="red">mdi-pencil</v-icon>
+                                </v-btn>
+                                <v-dialog v-model="dialog3" persistent max-width="300" hide-overlay overlay-color="white">
+                                    <template v-slot:activator="{ on }">
+                                    <v-btn icon class="mr-2 mt-7" v-on="on">
+                                        <v-icon color="red">mdi-delete</v-icon>
+                                    </v-btn>
+                                    </template>
+                                    <v-card  class="pa-7">
+                                        <v-card-text class="font-weight-black text-center">Are you sure you want to delete fuel pump?</v-card-text>
+                                        <v-card-action>
+                                            <v-btn color="grey" dark @click="dialog3 = false">No</v-btn>
+                                            
+                                            <v-btn color="grey" dark class="float-right" @click="dialog3 = false">Yes</v-btn>
+                                        </v-card-action>
+                                    </v-card>
+                                </v-dialog>
+                            </div>
+                            
                         </v-col>
                         </v-row>
                     </v-expansion-panel-content>
@@ -216,7 +256,10 @@ export default {
     },
     data(){
         return{
+            dialog1:false,
             dialog:false,
+            dialog2:false,
+            dialog3:false,
             dealer:[
                 {
                     companyName:'Benson Car Parts',

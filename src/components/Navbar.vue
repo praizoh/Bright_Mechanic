@@ -35,9 +35,9 @@
                     alt="Avatar"
                     src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
                   >
-                  <v-menu bottom left class="mt-12">
+                  <v-menu bottom left class="m>
                     <template v-slot:activator="{ on }">
-                      <v-btn small icon text class="ml-n2 mr-10 mt-5" v-on="on">
+                      <v-btn small icon text v-on="on">
                         <v-icon 
                         right class="ml-0 pl-0"
                       >mdi-chevron-down</v-icon>

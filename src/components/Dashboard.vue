@@ -27,7 +27,7 @@
     </v-list-item>
     <v-list-item style="margin-top:200px">
       <v-list-item-icon>
-        <v-icon color="white">mdi-heart</v-icon>
+        <v-icon color="white">mdi-logout</v-icon>
       </v-list-item-icon>
       <v-list-item-content>
         <v-list-item-title class='font-regular white--text'>Logout</v-list-item-title>
@@ -67,6 +67,8 @@ export default {
 }
 .v-list .v-list-item--active{
   
-  border-right: 5px plum solid;
+  border-right: 5px #B1AFCE solid;
+  background: #080E53;
+  box-shadow: 0px 4px 17px #00053B;
 }
 </style>

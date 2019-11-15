@@ -1,26 +1,26 @@
 <template>
-<v-container fluid id='item' class="fill-height">
+<v-container fluid id='item' class="fill-height" >
     
     <v-row align="center">
-        <v-col class="d-none d-sm-none d-md-block">
-            <div class="mb-12 mt-n7 float-right mr-12">
-                <h1 class="white--text">Welcome</h1>
-                <h3 class="white--text">Fill in your details to login to your dashboard</h3>
+        <v-col class="d-none d-sm-none d-md-block ml-8">
+            <div class="mb-12 mt-n7 mr-12 float-right">
+                <h1 class="white--text" style="width: 221px; height: 56px; left: 85px; top: 404px; font-family: Raleway; font-style: normal; font-weight: bold; font-size: 40px; line-height: 56px;">Welcome</h1>
+                <div class="white--text" style="width: 496px; height: 28px; left: 85px; top: 463px; font-family: Raleway; font-style: normal; font-weight: 500; font-size: 24px; line-height: 28px;" >Fill in your details to login to your dashboard</div>
             </div>
         </v-col>
-        <v-col>
-            <v-card max-width="400"
-            :class="{'mx-auto': $vuetify.breakpoint.mdAndDown, 'pa-7': $vuetify.breakpoint.lgAndDown}"
+        <v-col> 
+            <v-card max-width="500" min-width="300"
+            :class="{'mx-auto': $vuetify.breakpoint.mdAndDown, 'pa-12': $vuetify.breakpoint.lgAndDown}"
             >
                 <v-toolbar flat color="white">
-                    <v-toolbar-title class="font-weight-bold display-1" style="color:#080E53">Login</v-toolbar-title>
+                    <v-toolbar-title class="font-weight-bold display-1 mt-n6" style="color:#080E53">Login</v-toolbar-title>
                 </v-toolbar>
                 <v-card-text>
                     <v-form>
-                        <v-text-field  outlined label="Username" name="username" v-model="username" prepend-inner-icon="mdi-account" type="text">
+                        <v-text-field  outlined color="#B1AFCE" label="Username" name="username" v-model="username" prepend-inner-icon="mdi-account" type="text">
 
                         </v-text-field>
-                        <v-text-field  class="mt-7" outlined label="Password" name="password" v-model="password" prepend-inner-icon="mdi-lock" type="password">
+                        <v-text-field  class="mt-7" color="#B1AFCE" outlined label="Password" name="password" v-model="password" prepend-inner-icon="mdi-lock" type="password">
 
                         </v-text-field>
                     </v-form>

@@ -5,7 +5,7 @@
         
         <v-toolbar color="white" class="mb-0" height="30" flat>
             <v-subheader >
-                Dealers/ Dealers Info/ Add Item
+                Dealers/ Dealers Info/ Edit Dealer Info
             </v-subheader>
             <v-spacer>
             </v-spacer>
@@ -24,11 +24,19 @@
             
             <v-form class="mt-5 px-3" ref="form">
                 <v-row no-gutters>
-                    <v-col cols="12" sm="12" md="3" >
+                    <v-col cols="12" sm="6" md="4" >
                         <v-subheader class="text-center ml-12">Company Name</v-subheader>
                     </v-col>
-                    <v-col cols="12" sm="12" md="9">
-                         <v-text-field outlined dense name="itemName" required v-model="itemName" type="text" style="width:70%" :rules="inputRules"> </v-text-field>
+                    <v-col cols="12" sm="6" md="8">
+                         <v-text-field outlined dense name="companyName" required v-model="companyName" type="text" style="width:70%" :rules="inputRules"> </v-text-field>
+                    </v-col>
+                </v-row>
+                 <v-row no-gutters>
+                    <v-col cols="12" sm="6" md="3" >
+                        <v-subheader class="text-center ml-12">Alis</v-subheader>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="9">
+                         <v-text-field outlined dense name="alis" required v-model="alis" type="text" style="width:70%" :rules="inputRules"> </v-text-field>
                     </v-col>
                 </v-row>
                 <v-row no-gutters>
@@ -36,7 +44,7 @@
                         <v-subheader class="text-center ml-12">Phone Number</v-subheader>
                     </v-col>
                     <v-col cols="12" sm="12" md="9">
-                         <v-text-field outlined dense name="itemName" required v-model="itemName" type="text" style="width:70%" :rules="inputRules"> </v-text-field>
+                         <v-text-field outlined dense name="phoneNumber" required v-model="phoneNumber" type="text" style="width:70%" :rules="inputRules"> </v-text-field>
                     </v-col>
                 </v-row>
                 <v-row no-gutters>
@@ -44,7 +52,7 @@
                         <v-subheader class="text-center ml-12">Email</v-subheader>
                     </v-col>
                     <v-col cols="12" sm="12" md="9">
-                         <v-text-field outlined dense name="partNumber" required v-model="partNumber"  type="text" style="width:70%" :rules="inputRules"> </v-text-field>
+                         <v-text-field outlined dense name="email" required v-model="email"  type="text" style="width:70%" :rules="inputRules"> </v-text-field>
                     </v-col>
                 </v-row>
                 <v-row no-gutters>
@@ -52,7 +60,7 @@
                         <v-subheader class="text-center ml-12">Address</v-subheader>
                     </v-col>
                     <v-col cols="12" sm="12" md="9">
-                         <v-text-field outlined dense name="condition" required v-model="condition" :rules="inputRules"  type="text" style="width:70%"> </v-text-field>
+                         <v-text-field outlined dense name="address" required v-model="address" :rules="inputRules"  type="text" style="width:70%"> </v-text-field>
                     </v-col>
                 </v-row>
                 <v-row no-gutters>
@@ -60,7 +68,7 @@
                         <v-subheader class="text-center ml-12">Note</v-subheader>
                     </v-col>
                     <v-col cols="12" sm="12" md="9">
-                         <v-text-field outlined dense name="brand" required v-model="brand" :rules="inputRules"  type="text" style="width:70%"> </v-text-field>
+                         <v-text-field outlined dense name="note" required v-model="note" :rules="inputRules"  type="text" style="width:80%"> </v-text-field>
                     </v-col>
                 </v-row>
                 <v-row no-gutters>
@@ -68,16 +76,16 @@
                         <v-subheader class="text-center ml-12">Description</v-subheader>
                     </v-col>
                     <v-col cols="12" sm="12" md="9">
-                         <v-text-field outlined dense name="spec" required v-model="spec"  type="text" style="width:70%"> </v-text-field>
+                         <v-text-field outlined dense name="description" required v-model="description"  type="text" style="width:80%"> </v-text-field>
                     </v-col>
                 </v-row> 
                 <v-row>
-                    <v-col cols="12" sm="12" md="2" >
-                        <!-- <v-subheader class="text-center ml-12">Item Picture</v-subheader> -->
-                    </v-col>
-                    <v-col cols="12" sm="12" md="2" class="mr-12">
+                    <v-col cols="12" sm="12" md="3" ></v-col>
+                    <v-col cols="12" sm="12" md="7">
                         
-                        <v-btn style="margin-left:68vh" large class="white--text" color="#080838" @click="submit">Submit</v-btn>
+                        <v-btn large class="white--text" color="#080838" @click="submit">Save</v-btn>
+                    
+                        <v-btn large class="white--text float-right mr-n5" color="#080838" @click="submit">Cancel</v-btn>
                         
                         
                     </v-col>

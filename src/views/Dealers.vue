@@ -3,13 +3,13 @@
     <Dashboard/>
      <v-container>
         <v-toolbar color="white" class="mb-0" height="30" flat app>
-            <v-toolbar-title>
+            <v-toolbar-title style="width: 111px;height: 30px;left: 358px;top: 50px;font-family: Raleway;font-style: normal;font-weight: bold;font-size: 30px;line-height: 35px;color: #B1AFCE;">
                 Dealers
             </v-toolbar-title>
             <v-spacer>
             </v-spacer>
             <v-avatar
-                size="30px"         
+                size="40px"         
                 class="mr-10 ml-2"
             >
                 <img
@@ -20,17 +20,18 @@
         </v-toolbar>
         
         <v-row class="mt-0">
-            <v-col cols="12" md="8">
+            <v-col cols="12" md="8" sm="8">
                 <v-text-field class="ml-10 mr-10"
                     placeholder="search for dealers..."
                     prepend-inner-icon="mdi-magnify"
-            ></v-text-field>
+                    color="#B1AFCE"
+                ></v-text-field>
             </v-col>
             
-            <v-col cols="12" md="4">
+            <v-col cols="12" md="4" sm="4">
                 <div class="float-md-right mx-sm-auto ml-8 mr-12">
-                    <v-btn large class="white--text grey mt-4">
-                         + Add Dealers
+                    <v-btn large class="white--text mt-4" style="background-color:#B1AFCE">
+                         <v-icon>mdi-plus</v-icon> Add Dealers
                     </v-btn>
                 </div>
                 
@@ -38,25 +39,25 @@
         </v-row>
         <v-container class="mt-n4" v-for="dealer in dealers" :key="dealer.phone">
         <v-row>
-            <v-col cols="12" lg="11" md="11" sm="9" class="mt-n2 mb-0 pb-0">
+            <v-col cols="12" lg="11" md="11" sm="11" class="mt-n2 mb-0 pb-0">
         <v-card hover class="ml-12 mr-12 mb-0" flat  tile  to="/dealers/dealerInfo">
        <v-row justify="space-around">
-           <v-col cols="12" lg="5" md="6" sm="6" class="mt-n4">
-               <v-subheader>Company Name</v-subheader>
-               <v-card-text class="mt-n4 font-weight-black">{{dealer.companyName}}</v-card-text>
+           <v-col cols="12" lg="5" md="5" sm="12" class="mt-n4">
+               <v-subheader class="res1">Company Name</v-subheader>
+               <v-card-text class="mt-n4 font-weight-black res2 text-truncate">{{dealer.companyName}}</v-card-text>
            </v-col>
-           <v-col cols="12" lg="4" md="6" sm="6" class="mt-n4">
-               <v-subheader>Address</v-subheader>
+           <v-col cols="12" lg="4" md="4" sm="12" class="mt-n4">
+               <v-subheader class="res1">Address</v-subheader>
                <v-tooltip bottom color="#080838">
                    <template v-slot:activator="{ on }">
-                       <v-card-text class="mt-n4 font-weight-black text-truncate" v-on="on">{{dealer.Address}}</v-card-text>
+                       <v-card-text class="mt-n4 font-weight-black res2 text-truncate" v-on="on">{{dealer.Address}}</v-card-text>
                     </template>
                     <span>{{dealer.Address}}</span>
                </v-tooltip>  
            </v-col>
-           <v-col cols="12" lg="3" md="6" sm="6" class="mt-n4">
-               <v-subheader>Phone</v-subheader>
-               <v-card-text class="mt-n4 font-weight-black">{{dealer.Phone}}</v-card-text>
+           <v-col cols="12" lg="3" md="3" sm="12" class="mt-n4">
+               <v-subheader class="res1">Phone</v-subheader>
+               <v-card-text class="mt-n4 font-weight-black res2">{{dealer.Phone}}</v-card-text>
            </v-col>
             <!-- <v-col cols="12" lg="2" md="6" sm="6" class="mt-n2">
                <v-btn icon class="float-right mr-2">
@@ -72,7 +73,7 @@
         <v-col cols="12" lg="1" md="1" sm="1" class="mt-n2">
             <v-dialog v-model="dialog" persistent max-width="300" hide-overlay overlay-color="white">
             <template v-slot:activator="{ on }">
-            <v-btn icon class="mr-2 mt-7" v-on="on">
+            <v-btn icon class="mr-2 mt-7"  :class="{'mr-12 float-right': $vuetify.breakpoint.smAndDown}" v-on="on">
                 <v-icon color="red">mdi-delete</v-icon>
             </v-btn>
             </template>
@@ -103,6 +104,7 @@ export default {
         Dashboard,
     },
      data: () => ({
+         dialog:false,
   }),
   computed:{
     dealers(){
@@ -111,3 +113,16 @@ export default {
   }
 }
 </script>
+<style scoped>
+.res1{
+font-family: Raleway;
+
+color: #B1AFCE
+}
+.res2{
+font-weight: bolder;
+/* font-size: 15px; */
+font-family: Raleway;
+color: black;
+}
+</style>
