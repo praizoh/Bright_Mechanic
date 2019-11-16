@@ -4,7 +4,8 @@
     <Dashboard/>
     <v-container>
         <v-toolbar color="white" class="mb-0" height="30" flat>
-            <v-toolbar-title style="font-family: Raleway;font-style: normal;font-weight: bold;font-size: 30px;color: #B1AFCE;">
+            <!-- <v-toolbar-title style="font-family: Raleway;font-style: normal;font-weight: bold;font-size: 30px;color: #B1AFCE;"> -->
+            <v-toolbar-title class="font-weight-black res1">
                 Items
             </v-toolbar-title>
             <v-spacer>
@@ -31,7 +32,7 @@
             
             <v-col cols="12" md="4">
                 <div class="float-md-right mx-sm-auto ml-8 mr-12">
-                    <v-btn large class="white--text mt-4" style="background-color:#B1AFCE">
+                    <v-btn large class="white--text mt-4" style="background-color:#B1AFCE" to='/item/addItem'>
                         <v-icon>mdi-plus</v-icon> Add Items
                     </v-btn>
                 </div>

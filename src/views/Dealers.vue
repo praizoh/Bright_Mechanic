@@ -3,7 +3,7 @@
     <Dashboard/>
      <v-container>
         <v-toolbar color="white" class="mb-0" height="30" flat app>
-            <v-toolbar-title style="width: 111px;height: 30px;left: 358px;top: 50px;font-family: Raleway;font-style: normal;font-weight: bold;font-size: 30px;line-height: 35px;color: #B1AFCE;">
+            <v-toolbar-title class="res1 font-weight-black">
                 Dealers
             </v-toolbar-title>
             <v-spacer>

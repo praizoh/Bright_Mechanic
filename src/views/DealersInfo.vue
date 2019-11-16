@@ -120,7 +120,7 @@
                 <v-toolbar flat class="mt-12">
                     <v-toolbar-title style="color:#B1AFCE" class="font-weight-black">Items</v-toolbar-title>
                     <v-spacer></v-spacer>
-                    <v-btn large class="white--text" to='/dealers/addItem' style="background-color:#B1AFCE">
+                    <v-btn large class="white--text" to='/item/addItem' style="background-color:#B1AFCE">
                         <v-icon>mdi-plus</v-icon> <span > Add Items</span>
                     </v-btn>
                 </v-toolbar>
