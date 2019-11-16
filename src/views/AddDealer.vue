@@ -5,7 +5,7 @@
         
         <v-toolbar color="white" class="mb-0" height="30" flat>
             <v-toolbar-title class="res1 font-weight-black">
-                Dealers/ Dealers Info/ Add Item
+                Dealers/ Add Dealer
             </v-toolbar-title>
             <v-spacer>
             </v-spacer>
@@ -19,14 +19,19 @@
                 >
             </v-avatar>
         </v-toolbar>
-        
+        <v-toolbar flat class="mt-3" height="30">
+                    <v-spacer></v-spacer>
+                    <v-btn large class="white--text" to='/item/addItem' style="background-color:#B1AFCE">
+                        <v-icon>mdi-plus</v-icon> <span > Add Items</span>
+                    </v-btn>
+                </v-toolbar>
         <v-container fill-width>
-            <v-card style="width:80%" flat>
+            <v-card style="width:80%" class="mt-n5" flat>
                 <!-- <div > -->
-                    <v-form class="mt-5" ref="form">
+                    <v-form ref="form">
                         <v-row no-gutters>
                             <v-col cols="12" sm="12" md="3">
-                                <v-subheader class="text-center ml-12 res1">Dealers Name</v-subheader>
+                                <v-subheader class="text-center ml-12 res1">Company Name</v-subheader>
                             </v-col>
                             <v-col cols="12" xs="12" sm="12" md="8">
                                 <!-- <h4 class="mt-3 res2" >Benson Car Parts</h4> -->
@@ -35,7 +40,7 @@
                         </v-row>
                         <v-row no-gutters>
                             <v-col cols="12" sm="12" md="3" >
-                                <v-subheader class="text-center ml-12 res1">Item Name</v-subheader>
+                                <v-subheader class="text-center ml-12 res1">Alias</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
                                 <v-text-field outlined dense name="itemName" color="#B1AFCE" required v-model="itemName" type="text" style=" font-weight:bold" :rules="inputRules"> </v-text-field>
@@ -43,7 +48,7 @@
                         </v-row>
                         <v-row no-gutters>
                             <v-col cols="12" sm="12" md="3" >
-                                <v-subheader class="text-center ml-12 res1">Part Number</v-subheader>
+                                <v-subheader class="text-center ml-12 res1">Phone Number</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
                                 <v-text-field color="#B1AFCE" outlined dense name="partNumber" required v-model="partNumber"  type="text" style="; font-weight:bold" :rules="inputRules"> </v-text-field>
@@ -51,7 +56,7 @@
                         </v-row>
                         <v-row no-gutters>
                             <v-col cols="12" sm="12" md="3" >
-                                <v-subheader class="text-center ml-12 res1">Condition</v-subheader>
+                                <v-subheader class="text-center ml-12 res1">Email</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
                                 <v-text-field outlined dense color="#B1AFCE" name="condition" required v-model="condition" :rules="inputRules"  type="text" style=" font-weight:bold"> </v-text-field>
@@ -59,7 +64,7 @@
                         </v-row>
                         <v-row no-gutters>
                             <v-col cols="12" sm="12" md="3" >
-                                <v-subheader class="text-center ml-12 res1">Brand</v-subheader>
+                                <v-subheader class="text-center ml-12 res1">Address</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
                                 <v-text-field outlined color="#B1AFCE" dense name="brand" required v-model="brand" :rules="inputRules"  type="text" style="font-weight:bold"> </v-text-field>
@@ -67,7 +72,7 @@
                         </v-row>
                         <v-row no-gutters>
                             <v-col cols="12" sm="12" md="3" >
-                                <v-subheader class="text-center res1 ml-12">Spec</v-subheader>
+                                <v-subheader class="text-center res1 ml-12">Note</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
                                 <v-text-field outlined color="#B1AFCE" dense name="spec" required v-model="spec"  type="text" style="font-weight:bold"> </v-text-field>
@@ -75,31 +80,15 @@
                         </v-row>
                         <v-row no-gutters>
                             <v-col cols="12" sm="12" md="3" >
-                                <v-subheader class="text-center ml-12 res1">Dealer Price</v-subheader>
+                                <v-subheader class="text-center ml-12 res1">Description</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
                                 <v-text-field outlined dense color="#B1AFCE" name="dealerPrice" required v-model="dealerPrice" :rules="inputRules"  type="text" style="font-weight:bold"> </v-text-field>
                             </v-col>
                         </v-row>
-                        <v-row no-gutters>
+                                                <v-row no-gutters>
                             <v-col cols="12" sm="12" md="3" >
-                                <v-subheader class="text-center ml-12 res1">Retail Price</v-subheader>
-                            </v-col>
-                            <v-col cols="12" sm="12" md="9">
-                                <v-text-field outlined dense name="retailPrice" color="#B1AFCE" required v-model="retailPrice" :rules="inputRules"  type="text" style="font-weight:bold"> </v-text-field>
-                            </v-col>
-                        </v-row>
-                        <v-row no-gutters>
-                            <v-col cols="12" sm="12" md="3" >
-                                <v-subheader class="text-center ml-12 res1">Category</v-subheader>
-                            </v-col>
-                            <v-col cols="12" sm="12" md="9">
-                                <v-text-field outlined dense color="#B1AFCE" name="category" required v-model="category" :rules="inputRules"  type="text" style="font-weight:bold"> </v-text-field>
-                            </v-col>
-                        </v-row>
-                        <v-row no-gutters>
-                            <v-col cols="12" sm="12" md="3" >
-                                <v-subheader class="text-center res1 ml-12">Item Picture</v-subheader>
+                                <v-subheader class="text-center res1 ml-12">Company Image</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
                                 
@@ -113,9 +102,9 @@
                             </v-col>
                         </v-row>
                         
-                        <v-row >
+                        <v-row class="mt-n6">
                             
-                            <v-col cols="12" sm="12" md="12 pr-0">
+                            <v-col cols="12" sm="12" md="12" class="mt-n6">
                                 <v-card-text class="text-right">
                                  <v-btn large class="white--text " color="#080838" @click="submit">Submit</v-btn>
                                 </v-card-text>

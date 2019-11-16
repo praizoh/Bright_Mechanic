@@ -30,7 +30,7 @@
             
             <v-col cols="12" md="4" sm="4">
                 <div class="float-md-right mx-sm-auto ml-8 mr-12">
-                    <v-btn large class="white--text mt-4" style="background-color:#B1AFCE">
+                    <v-btn large class="white--text mt-4" style="background-color:#B1AFCE" to="/dealers/addDealer">
                          <v-icon>mdi-plus</v-icon> Add Dealers
                     </v-btn>
                 </div>

@@ -3,60 +3,42 @@
     <Dashboard/>
      <v-container>
         <v-toolbar color="white" class="mb-0" height="30" flat>
-            <v-toolbar-title>
-                Dealers
+            <v-toolbar-title class="res1 font-weight-black">
+                Manage Users
             </v-toolbar-title>
             <v-spacer>
             </v-spacer>
-            <v-avatar
-                size="30px"
-                class="mr-10 ml-2"
-            >
-                <img
-                alt="Avatar"
-                src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
-                >
-            </v-avatar>
         </v-toolbar>
         
-        <v-row class="mt-0">
-            <v-col cols="12" md="8">
-                <v-text-field class="ml-10 mr-10"
-                    placeholder="search for dealers..."
-                    prepend-inner-icon="mdi-magnify"
-            ></v-text-field>
-            </v-col>
-            
-            <v-col cols="12" md="4">
-                <div class="float-md-right mx-sm-auto ml-8 mr-12">
-                    <v-btn large class="white--text grey mt-4">
-                         + Add Users
-                    </v-btn>
-                </div>
-                
-            </v-col>
-        </v-row>
-        <v-container class="mt-n4">
-        <v-row v-for="user in users" :key="user.id">
+        <v-toolbar flat>
+            <v-toolbar-title style="color:#B1AFCE" class="font-weight-black">Users</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn large class="white--text" to='/manageUsers/addUser' style="background-color:#B1AFCE">
+                <v-icon>mdi-plus</v-icon> <span > Add Users</span>
+            </v-btn>
+        </v-toolbar>
+        <v-card class="mt-4">
+        <v-row v-for="user in users" :key="user.id" no-gutters>
             <v-col cols="12" lg="10" md="6" sm="6" class="mt-n2">
-        <v-card hover class="ml-12 mr-12" flat  tile  to="/dealerInfo">
+        <v-card hover class="ml-12 mr-12" flat  tile to="manageUsers/manageUserProflie">
+        
        <v-row justify="space-around">
            <v-col cols="12" lg="3" md="6" sm="6" class="mt-n4">
-               <v-subheader>Name</v-subheader>
-               <v-card-text class="mt-n4 font-weight-black">{{user.name}}</v-card-text>
+               <v-subheader class="res1 font-weight-bold">Name</v-subheader>
+               <v-card-text class="mt-n4 res2 font-weight-black">{{user.name}}</v-card-text>
            </v-col>
            <v-col cols="12" lg="2" md="6" sm="6" class="mt-n4">
-               <v-subheader>Username</v-subheader>
-               <v-card-text class="mt-n4 font-weight-black text-truncate" v-on="on">{{user.username}}</v-card-text>
+               <v-subheader class="res1 font-weight-bold">Username</v-subheader>
+               <v-card-text class="mt-n4 res2 font-weight-black text-truncate" v-on="on">{{user.username}}</v-card-text>
                     
            </v-col>
            <v-col cols="12" lg="3" md="6" sm="6" class="mt-n4">
-               <v-subheader>Password</v-subheader>
-               <v-card-text class="mt-n4 font-weight-black">{{user.password}}</v-card-text>
+               <v-subheader class="res1 font-weight-bold">Password</v-subheader>
+               <v-card-text class="mt-n4 res2 font-weight-black">{{user.password}}</v-card-text>
            </v-col>
            <v-col cols="12" lg="2" md="6" sm="6" class="mt-n4">
-               <v-subheader>Priviledge</v-subheader>
-               <v-card-text class="mt-n4 font-weight-black">{{user.priviledge}}</v-card-text>
+               <v-subheader class="res1 font-weight-bold">Priviledge</v-subheader>
+               <v-card-text class="mt-n4 res2 font-weight-black">{{user.priviledge}}</v-card-text>
            </v-col>
            
        </v-row>
@@ -81,13 +63,13 @@
         </v-dialog>
         </v-col>
         <v-col cols="12" lg="1" md="6" sm="6" class="mt-4">
-               <v-btn icon class="mr-n7">
+               <v-btn icon class="mr-n7" to="/manageUsers/editUser">
                 <v-icon color="red">mdi-pencil</v-icon>
               </v-btn>
                
            </v-col>
         </v-row>
-        </v-container>
+        </v-card>
         
     </v-container>
 </div>
@@ -112,3 +94,16 @@ export default {
   }
 }
 </script>
+<style scoped>
+.res1{
+font-family: Raleway;
+
+color: #B1AFCE
+}
+.res2{
+font-weight: bolder;
+/* font-size: 15px; */
+font-family: Raleway;
+color: black;
+}
+</style>

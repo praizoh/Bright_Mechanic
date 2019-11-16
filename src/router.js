@@ -11,6 +11,10 @@ import AttendLit from './views/AttendLit.vue'
 import AttendLitFree from './views/AttendLitFree.vue'
 import AttendLitPaid from './views/AttendLitPaid.vue'
 import ManageUser from './views/ManageUser.vue'
+import ManageUserProfile from './views/ManageUserProfile.vue'
+import AddUser from './views/AddUser.vue'
+import EditUser from './views/EditUser.vue'
+import AddDealer from './views/AddDealer.vue'
 
 Vue.use(Router)
 
@@ -73,7 +77,31 @@ export default new Router({
       name: 'manageUsers',
       component: ManageUser
     },
-   
+    {
+      path: '/manageUsers/manageUserProflie',
+      name: 'ManageUserProfile',
+      component: ManageUserProfile
+    },
+    {
+      path: '/manageUsers/addUser',
+      name: 'AddUser',
+      component: AddUser
+    },
+    
+    {
+      path: '/dealers/addDealer',
+      name: 'AddDealer',
+      component: AddDealer
+    },
+    
+    
+    {
+      path: '/manageUsers/editUser',
+      name: 'EdiUser',
+      component: EditUser
+    },
+    
+    
     {
       path: '',
       name: '',
