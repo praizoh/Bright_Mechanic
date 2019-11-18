@@ -116,14 +116,105 @@
                     </v-row>
                     <v-divider></v-divider>
                 </v-card>
-
-                <v-toolbar flat class="mt-12">
-                    <v-toolbar-title style="color:#B1AFCE" class="font-weight-black">Items</v-toolbar-title>
+                <v-toolbar-title style="color:#B1AFCE" class="font-weight-black mt-5 mb-n4">Items</v-toolbar-title>
+                <v-toolbar flat class="mt-12" height="30">
+                    
+                    <v-text-field
+                        placeholder="search for items..."
+                        prepend-inner-icon="mdi-magnify"
+                        color="#B1AFCE"
+                    ></v-text-field>
+    
                     <v-spacer></v-spacer>
+                    <!-- <v-sub-header class="res1">Upload CSV</v-sub-header> -->
+                    <v-dialog v-model="dialog_file" persistent max-width="500" overlay-color="white">
+                        <template v-slot:activator="{ on }">
+                        <v-btn large v-on="on" class="mr-4 d-none d-sm-none d-md-block">
+                            
+                            <v-icon color="red">mdi-file-document-box-plus</v-icon>
+                            <span>Upload CSV</span>  
+                        </v-btn>
+                        
+                        </template>
+                        <v-card  class="pa-7">
+                            <v-row no-gutters >
+                                <v-col cols="12" sm="12" md="5">
+                                    <v-subheader class="text-center res2 font-weight-bold">Upload Items(CSV)</v-subheader>
+                                </v-col>
+                                <v-col cols="12" xs="12" sm="12" md="7">
+                                    <v-file-input
+                                        outlined dense style=" font-weight:bold"
+                                        prepend-outer-icon="mdi-camera"
+                                        v-model="itemPicture"
+                                        color="#B1AFCE"
+                                    ></v-file-input>
+                                </v-col>
+                            </v-row>
+                            <v-row>
+                                <v-col>
+
+                                </v-col>
+                                <v-card-action>
+                                <!-- <v-btn color="#B1AFCE" dark @click="dialog1 = false">No</v-btn> -->
+                                
+                                <v-btn color="#080E53" dark class="float-right" @click="dialog_file = false">Submit</v-btn>
+                            </v-card-action>
+                            </v-row>
+                            
+                        </v-card>
+                    </v-dialog>
+                    
+                     <v-btn large class="white--text d-none d-sm-none d-md-flex" to='/item/addItem' style="background-color:#B1AFCE">
+                        <v-icon>mdi-plus</v-icon> <span > Add Items</span>
+                    </v-btn>
+                </v-toolbar>
+                <!-- toolbar for medium and down -->
+                <v-toolbar flat class="mt-12 d-sm-block d-md-none" height="30">
+    
+                   
+                    <!-- <v-sub-header class="res1">Upload CSV</v-sub-header> -->
+                    <v-dialog v-model="dialog_file" persistent max-width="500" overlay-color="white">
+                        <template v-slot:activator="{ on }">
+                        <v-btn large v-on="on" class="ma-2">
+                            
+                            <v-icon color="red">mdi-file-document-box-plus</v-icon>
+                            <span>Upload CSV</span>  
+                        </v-btn>
+                        
+                        </template>
+                        <v-card  class="pa-7">
+                            <v-row no-gutters >
+                                <v-col cols="12" sm="12" md="5">
+                                    <v-subheader class="text-center res2 font-weight-bold">Upload Items(CSV)</v-subheader>
+                                </v-col>
+                                <v-col cols="12" xs="12" sm="12" md="7">
+                                    <v-file-input
+                                        outlined dense style=" font-weight:bold"
+                                        prepend-outer-icon="mdi-camera"
+                                        v-model="itemPicture"
+                                        color="#B1AFCE"
+                                    ></v-file-input>
+                                </v-col>
+                            </v-row>
+                            <v-row>
+                                <v-col>
+
+                                </v-col>
+                                <v-card-action>
+                                <!-- <v-btn color="#B1AFCE" dark @click="dialog1 = false">No</v-btn> -->
+                                
+                                <v-btn color="#080E53" dark class="float-right" @click="dialog_file = false">Submit</v-btn>
+                            </v-card-action>
+                            </v-row>
+                            
+                        </v-card>
+                    </v-dialog>
+                     <v-spacer></v-spacer>
                     <v-btn large class="white--text" to='/item/addItem' style="background-color:#B1AFCE">
                         <v-icon>mdi-plus</v-icon> <span > Add Items</span>
                     </v-btn>
                 </v-toolbar>
+                
 
             </v-container>
         <v-container>
@@ -263,6 +354,7 @@ export default {
             dialog:false,
             dialog2:false,
             dialog3:false,
+            dialog_file:false,
             dealer:[
                 {
                     companyName:'Benson Car Parts',

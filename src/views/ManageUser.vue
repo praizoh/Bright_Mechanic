@@ -17,10 +17,11 @@
                 <v-icon>mdi-plus</v-icon> <span > Add Users</span>
             </v-btn>
         </v-toolbar>
-        <v-card class="mt-4">
-        <v-row v-for="user in users" :key="user.id" no-gutters>
+        <v-card class="mt-4" flat>
+        <div v-for="user in users" :key="user.id" no-gutters>
+        <v-row>
             <v-col cols="12" lg="10" md="6" sm="6" class="mt-n2">
-        <v-card hover class="ml-12 mr-12" flat  tile to="manageUsers/manageUserProflie">
+        <v-card class="ml-12 mr-12" flat  tile to="manageUsers/manageUserProflie">
         
        <v-row justify="space-around">
            <v-col cols="12" lg="3" md="6" sm="6" class="mt-n4">
@@ -42,7 +43,7 @@
            </v-col>
            
        </v-row>
-       <v-divider></v-divider>
+       
         </v-card>
         </v-col>
         <v-col cols="12" lg="1" md="6" sm="6" class="mt-n2">
@@ -68,7 +69,11 @@
               </v-btn>
                
            </v-col>
+        
+
         </v-row>
+        <v-divider></v-divider>
+        </div>
         </v-card>
         
     </v-container>

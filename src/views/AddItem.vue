@@ -97,6 +97,21 @@
                                 <v-text-field outlined dense color="#B1AFCE" name="category" required v-model="category" :rules="inputRules"  type="text" style="font-weight:bold"> </v-text-field>
                             </v-col>
                         </v-row>
+                         <v-row no-gutters>
+                            <v-col cols="12" sm="12" md="3" >
+                                <v-subheader class="text-center res1 ml-12">Item Datasheet</v-subheader>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="9">
+                                
+                                <v-file-input
+                                    outlined dense style=" font-weight:bold"
+                                    
+                                    v-model="itemDatasheet"
+                                    color="#B1AFCE"
+                                ></v-file-input>
+                                <!-- <div class="mt-n5 disable"><v-btn large class="white--text mt-n12 mb-12" color="#080838">Choose Datasheet</v-btn></div> -->
+                            </v-col>
+                        </v-row>
                         <v-row no-gutters>
                             <v-col cols="12" sm="12" md="3" >
                                 <v-subheader class="text-center res1 ml-12">Item Picture</v-subheader>

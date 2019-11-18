@@ -31,11 +31,11 @@
             </v-col>
             
             <v-col cols="12" md="4">
-                <div class="float-md-right mx-sm-auto ml-8 mr-12">
+                <!-- <div class="float-md-right mx-sm-auto ml-8 mr-12">
                     <v-btn large class="white--text mt-4" style="background-color:#B1AFCE" to='/item/addItem'>
                         <v-icon>mdi-plus</v-icon> Add Items
                     </v-btn>
-                </div>
+                </div> -->
                 
             </v-col>
             
@@ -47,19 +47,19 @@
                     
                     <v-row justify="space-around">
                         <v-col cols="12" lg="3" md="6" sm="6" class="mt-n4">
-                            <v-subheader class="res1">Name</v-subheader>
+                            <v-subheader class="res1 font-weight-bold">Name</v-subheader>
                             <v-card-text class="mt-n4 font-weight-black res2">{{item.Name}}</v-card-text>
                         </v-col>
                         <v-col cols="12" lg="2" md="6" sm="6" class="mt-n4">
-                            <v-subheader class="res1">State</v-subheader>
+                            <v-subheader class="res1 font-weight-bold">State</v-subheader>
                             <v-card-text class="mt-n4 res2 font-weight-black">{{item.State}}</v-card-text>
                         </v-col>
                         <v-col cols="12" lg="4" md="6" sm="6" class="mt-n4">
-                            <v-subheader class="res1">Dealer</v-subheader>
+                            <v-subheader class="res1 font-weight-bold">Dealer</v-subheader>
                             <v-card-text class="mt-n4 res2 font-weight-black">{{item.Dealer}}</v-card-text>
                         </v-col>
                         <v-col cols="12" lg="2" md="6" sm="6" class="mt-n4">
-                            <v-subheader class="res1">Price</v-subheader>
+                            <v-subheader class="res1 font-weight-bold">Price</v-subheader>
                             <v-card-text class="mt-n4 res2 font-weight-black">{{item.Price}}</v-card-text>
                         </v-col>
                         <v-col cols="12" lg="1" md="12" sm="12" class="mt-n2">
@@ -88,23 +88,28 @@
                     <v-col cols="12" lg="6" md="6" sm="6">
                     <v-row>
                         <v-col cols="12" lg="5" md="6" sm="12" class="mt-n4">
-                            <v-subheader class="res1">Part-Number</v-subheader>
+                            <v-subheader class="res1 font-weight-bold">Part-Number</v-subheader>
                             <v-card-text class="mt-n4 res2 font-weight-black ">{{item.PartNumber}}</v-card-text>
                         </v-col>
                         <v-col cols="12" lg="5" md="6" sm="12" class="mt-n4" justify="center">
-                            <v-subheader class="res1 ">Retail Price</v-subheader>
+                            <v-subheader class="res1 font-weight-bold">Retail Price</v-subheader>
                             <v-card-text class="mt-n4 res2 font-weight-black">{{item.RetailPrice}}</v-card-text>
                         </v-col>
                     </v-row>
                     <v-row>
-                        <v-col cols="12" lg="12" md="6" sm="12" class="mt-n4">
-                            <v-subheader class="res1">Dealer Phone No.</v-subheader>
+                        <v-col cols="12" lg="5" md="6" sm="12" class="mt-n4">
+                            <v-subheader class="res1 font-weight-bold">Dealer Phone No.</v-subheader>
                             <v-card-text class="mt-n4 res2 font-weight-black">{{item.DealerPhone}}</v-card-text>
+                        </v-col>
+                        <v-col cols="12" lg="5" md="6" sm="12" class="mt-n4">
+                            <v-subheader class="res1 font-weight-bold">Item Datasheet</v-subheader>
+                            <!-- <v-card-text class="mt-n4 res2 font-weight-black">{{item.DealerPhone}}</v-card-text> -->
+                            <v-card-text class="mt-n4 res2 font-weight-black"><a href="https://www.reddit.com/r/vuejs/comments/8z8og1/vuetify_icon_links/" target="_blank">Datasheet</a></v-card-text>
                         </v-col>
                     </v-row>
                     <v-row>
                         <v-col cols="12" lg="12" md="12" sm="12" class="mt-n4">
-                            <v-subheader class="res1">Dealer Address</v-subheader>
+                            <v-subheader class="res1 font-weight-bold">Dealer Address</v-subheader>
                             <v-card-text class="mt-n4 res2 font-weight-black">{{item.DealerAddress}}</v-card-text>
                         </v-col>
                     </v-row>

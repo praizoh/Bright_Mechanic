@@ -40,14 +40,14 @@
         <v-container class="mt-n4" v-for="dealer in dealers" :key="dealer.phone">
         <v-row>
             <v-col cols="12" lg="11" md="11" sm="11" class="mt-n2 mb-0 pb-0">
-        <v-card hover class="ml-12 mr-12 mb-0" flat  tile  to="/dealers/dealerInfo">
+        <v-card class="ml-12 mr-12 mb-0" flat  tile  to="/dealers/dealerInfo">
        <v-row justify="space-around">
            <v-col cols="12" lg="5" md="5" sm="12" class="mt-n4">
-               <v-subheader class="res1">Company Name</v-subheader>
+                <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Company Name</v-subheader>
                <v-card-text class="mt-n4 font-weight-black res2 text-truncate">{{dealer.companyName}}</v-card-text>
            </v-col>
            <v-col cols="12" lg="4" md="4" sm="12" class="mt-n4">
-               <v-subheader class="res1">Address</v-subheader>
+               <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Address</v-subheader>
                <v-tooltip bottom color="#080838">
                    <template v-slot:activator="{ on }">
                        <v-card-text class="mt-n4 font-weight-black res2 text-truncate" v-on="on">{{dealer.Address}}</v-card-text>
@@ -56,7 +56,7 @@
                </v-tooltip>  
            </v-col>
            <v-col cols="12" lg="3" md="3" sm="12" class="mt-n4">
-               <v-subheader class="res1">Phone</v-subheader>
+               <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Phone</v-subheader>
                <v-card-text class="mt-n4 font-weight-black res2">{{dealer.Phone}}</v-card-text>
            </v-col>
             <!-- <v-col cols="12" lg="2" md="6" sm="6" class="mt-n2">
@@ -113,8 +113,9 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style>
 .res1{
+font-weight: bolder;
 font-family: Raleway;
 
 color: #B1AFCE
