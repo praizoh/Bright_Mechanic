@@ -355,17 +355,21 @@ export default {
             dialog2:false,
             dialog3:false,
             dialog_file:false,
-            dealer:[
-                {
-                    companyName:'Benson Car Parts',
-                    alis:'Uncle Benson Car Parts',
-                    phoneNumber:'0812 300 4154  0812 300 4154',
-                    email:'Bensoncars@hotmail.com',
-                    address:'Shop 34, Computer Village, Ikeja, Lagos',
-                    note:'You have to pre order tbefore he delivers goods, and he is a busy person',
-                    description:'Specializes in Toyota car parts'
-                }
+            dealer:[{
+                 companyName:"BENSON Car Parts",
+                 alis:"Uncle Benson Cars",
+                 phoneNumber:"08102872652",
+                 phoneNumber2:"08078676543",
+                 email:"benson@gmail.com",
+                 address:"Shop 34, Computer Vilage, Ikeja, Lagos",
+                 note:"You have to pre order before he delivers goods, and he is a busy person",
+                 description:"Specializes inin Toyota car parts"
+                 
+            }
+            // 192.168.1.102:8080
+               
             ],
+        
             items:[
                 {
                 name:"Fuel Pump",

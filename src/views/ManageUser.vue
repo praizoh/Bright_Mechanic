@@ -90,11 +90,8 @@ export default {
      data: () => ({
   }),
   computed:{
-    dealers(){
-    return this.$store.state.dealers;
-    },
     users(){
-    return this.$store.state.users;
+    return this.$store.state.user.users;
     }
   }
 }

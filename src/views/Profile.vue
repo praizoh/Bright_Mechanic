@@ -12,7 +12,7 @@
             <v-row justify="center">
                 <v-avatar size="120">
                     <img
-                        src="Ellipse.png"
+                        src="/Ellipse.png"
                         alt="John"
                     >
                 </v-avatar>

@@ -50,16 +50,9 @@ export default {
         login(){
             let username=this.username
             let password=this.password
-            alert(username)
-            alert(password)
-            if (username=="Bright56" && password=="1234"){
-                this.$router.push('/dealers')
-            } else{
-                this.$router.push('/')
-            }
-            //this.$store.dispatch('login', {username, password})
-            //.then(()=>this.$router.push('/dealers'))
-            //.catch(err=> console.log(err))
+            this.$store.dispatch('Login', {username, password})
+            .then(()=>this.$router.push('/dealers'))
+            // .catch(err=> console.log(err))
         }
     }
 }

@@ -37,59 +37,71 @@
                 
             </v-col>
         </v-row>
-        <v-container class="mt-n4" v-for="dealer in dealers" :key="dealer.phone">
-        <v-row>
-            <v-col cols="12" lg="11" md="11" sm="11" class="mt-n2 mb-0 pb-0">
-        <v-card class="ml-12 mr-12 mb-0" flat  tile  to="/dealers/dealerInfo">
-       <v-row justify="space-around">
-           <v-col cols="12" lg="5" md="5" sm="12" class="mt-n4">
-                <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Company Name</v-subheader>
-               <v-card-text class="mt-n4 font-weight-black res2 text-truncate">{{dealer.companyName}}</v-card-text>
-           </v-col>
-           <v-col cols="12" lg="4" md="4" sm="12" class="mt-n4">
-               <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Address</v-subheader>
-               <v-tooltip bottom color="#080838">
-                   <template v-slot:activator="{ on }">
-                       <v-card-text class="mt-n4 font-weight-black res2 text-truncate" v-on="on">{{dealer.Address}}</v-card-text>
-                    </template>
-                    <span>{{dealer.Address}}</span>
-               </v-tooltip>  
-           </v-col>
-           <v-col cols="12" lg="3" md="3" sm="12" class="mt-n4">
-               <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Phone</v-subheader>
-               <v-card-text class="mt-n4 font-weight-black res2">{{dealer.Phone}}</v-card-text>
-           </v-col>
-            <!-- <v-col cols="12" lg="2" md="6" sm="6" class="mt-n2">
-               <v-btn icon class="float-right mr-2">
-                <v-icon color="red">mdi-delete</v-icon>
-              </v-btn>
-               
-           </v-col> -->
-           
-       </v-row>
-       
-        </v-card>
-        </v-col>
-        <v-col cols="12" lg="1" md="1" sm="1" class="mt-n2">
-            <v-dialog v-model="dialog" persistent max-width="300" hide-overlay overlay-color="white">
-            <template v-slot:activator="{ on }">
-            <v-btn icon class="mr-2 mt-7"  :class="{'mr-12 float-right': $vuetify.breakpoint.smAndDown}" v-on="on">
-                <v-icon color="red">mdi-delete</v-icon>
-            </v-btn>
-            </template>
-            <v-card  class="pa-7">
-                <v-card-text class="font-weight-black text-center">Are you sure you want to delete fuel pump?</v-card-text>
-                <v-card-action>
-                    <v-btn color="grey" dark @click="dialog = false">No</v-btn>
-                    
-                    <v-btn color="grey" dark class="float-right" @click="dialog = false">Yes</v-btn>
-                </v-card-action>
-            </v-card>
-        </v-dialog>
-        </v-col>
-        
-        </v-row>
-        <v-divider class="mt-0"></v-divider>
+        <v-container class="mt-n4" v-for="dealer in dealers" :key="dealer.id">
+            <v-hover v-slot:default="{ hover }">
+                <v-row :class="{'on-hover':hover}">
+                    <v-col cols="12" lg="11" md="11" sm="11" class="mt-n2 mb-0 pb-0">
+                        <v-card class="ml-12 mr-12 mb-0" flat  tile   @mouseover="getDealerId(dealer.id)">
+                            <v-row justify="space-around">
+                                <v-col cols="12" lg="5" md="5" sm="12" class="mt-n4">
+                                        <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Company Name</v-subheader>
+                                    <v-card-text class="mt-n4 font-weight-black res2 text-truncate">{{dealer.companyName}}</v-card-text>
+                                </v-col>
+                                <v-col cols="12" lg="4" md="4" sm="12" class="mt-n4">
+                                    <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Address</v-subheader>
+                                    <v-tooltip bottom color="#080838">
+                                        <template v-slot:activator="{ on }">
+                                            <v-card-text class="mt-n4 font-weight-black res2 text-truncate" v-on="on">{{dealer.Address}}</v-card-text>
+                                            </template>
+                                            <span>{{dealer.Address}}</span>
+                                    </v-tooltip>  
+                                </v-col>
+                                <v-col cols="12" lg="3" md="3" sm="12" class="mt-n4">
+                                    <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Phone</v-subheader>
+                                    <v-card-text class="mt-n4 font-weight-black res2">{{dealer.Phone}}</v-card-text>
+                                </v-col>
+                                    <!-- <v-col cols="12" lg="2" md="6" sm="6" class="mt-n2">
+                                    <v-btn icon class="float-right mr-2">
+                                        <v-icon color="red">mdi-delete</v-icon>
+                                    </v-btn>
+                                    
+                                </v-col> -->
+                                
+                            </v-row>
+                
+                        </v-card>
+                    </v-col>
+                    <v-col cols="12" lg="1" md="1" sm="1" class="mt-n2">
+                        <v-dialog v-model="dialog" persistent max-width="300" hide-overlay overlay-color="white">
+                        <template v-slot:activator="{ on }">
+                                <v-btn icon class="mr-2 mt-7"  :class="{'mr-12 float-right': $vuetify.breakpoint.smAndDown}" v-on="on">
+                                    <v-icon color="red">mdi-delete</v-icon>
+                                </v-btn>
+                            </template>
+                            <v-card  class="pa-7">
+                                <v-card-text class="font-weight-black text-center">Are you sure you want to delete fuel pump?</v-card-text>
+                                <v-card-action>
+                                    <v-btn color="grey" dark @click="dialog = false">No</v-btn>
+                                    
+                                    <v-btn color="grey" dark class="float-right" @click="dialog = false">Yes</v-btn>
+                                </v-card-action>
+                            </v-card>
+                        </v-dialog>
+                    </v-col>
+                    <!-- <v-expand-transition>
+                        <span
+                            v-if="hover"
+                            class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
+                            style="height: 100%;"
+                        >
+                            $14.99
+                        </span>
+                    </v-expand-transition> -->
+                </v-row>
+                
+            </v-hover>
+            
+             <v-divider class="mt-0"></v-divider>
         </v-container>
         
     </v-container>
@@ -105,11 +117,19 @@ export default {
     },
      data: () => ({
          dialog:false,
+         hover:false
   }),
   computed:{
     dealers(){
-    return this.$store.state.dealers;
+    return this.$store.state.dealers.dealers;
     }
+  },
+  methods:{
+      getDealerId(id){
+        // alert(id);
+        this.$store.dispatch('getDealerById', {id:id})
+        .then(()=>this.$router.push('/dealers/dealerInfo'))
+      }
   }
 }
 </script>
@@ -125,5 +145,8 @@ font-weight: bolder;
 /* font-size: 15px; */
 font-family: Raleway;
 color: black;
+}
+.on-hover{
+    background-image:#B1AFCE !important; 
 }
 </style>

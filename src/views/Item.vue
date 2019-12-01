@@ -142,18 +142,15 @@ export default {
     },
      data: () => ({
          dialog1:false,
-    items: [
-        {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-    ],
+    
     page:1
      
   }),
+  computed:{
+    items(){
+    return this.$store.state.item.items;
+    }
+  }
     
 }
 </script>

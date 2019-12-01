@@ -2,16 +2,14 @@
 <div>
     <Dashboard/>
     <v-toolbar color="white" class="mb-0" height="30" flat app>
-            <v-toolbar-title class="res1 mt-12 ml-12 font-weight-black">
+            <v-toolbar-title class="res1 ml-12 font-weight-black">
                 Manage Users/ user profile 
             </v-toolbar-title>
         </v-toolbar>
         <v-toolbar flat>
             <v-toolbar-title style="color:#B1AFCE" class="font-weight-black">User Profile</v-toolbar-title>
             <v-spacer></v-spacer>
-            <!-- <v-btn large class="white--text" to='/item/addItem' style="background-color:#B1AFCE"> -->
-                <v-icon class="red-text">mdi-delete</v-icon> 
-            
+                <v-icon class="red--text">mdi-delete</v-icon> 
         </v-toolbar>
     <v-container class="mr-12 ml-n12">
          
@@ -19,11 +17,12 @@
             <v-row justify="center">
                 <v-avatar size="120">
                     <img
-                        src="Ellipse.png"
-                        alt="John"
+                        src="/Ellipse.png"
+                        alt="Profile Picture"
                     >
                 </v-avatar>
             </v-row>
+            
         </v-row>
         <v-row justify="center" class="ml-12 mr-n12 mt-n6">
             <div class="ml-12 mr-n12 mb-6">
@@ -36,7 +35,7 @@
         </v-row>
         <v-row justify="center" class="mt-n3">
             <v-col>
-                <v-subheader class="float-right title1">Name</v-subheader>
+                <v-subheader class="float-right title1 font-weight-bold">Name</v-subheader>
             </v-col>
             <v-col class="mt-3">
                 <span class="font-weight-bold" style="color:#292929">Richard Somto</span>
@@ -44,7 +43,7 @@
         </v-row>
         <v-row justify="center" class="mt-n8">
             <v-col>
-                <v-subheader class="float-right title1">Username</v-subheader>
+                <v-subheader class="float-right title1 font-weight-bold">Username</v-subheader>
             </v-col>
             <v-col class="mt-3">
                 <span class="font-weight-bold">Somtomana</span>
@@ -52,7 +51,7 @@
         </v-row>
         <v-row justify="center" class="mt-n8">
             <v-col>
-                <v-subheader class="float-right title1">Email</v-subheader>
+                <v-subheader class="float-right title1 font-weight-bold">Email</v-subheader>
             </v-col>
             <v-col class="mt-3">
                 <span class="font-weight-bold">Somtomana@gmail.com</span>
@@ -60,7 +59,7 @@
         </v-row>
         <v-row justify="center" class="mt-n8">
             <v-col>
-                <v-subheader class="float-right title1">Phone 1</v-subheader>
+                <v-subheader class="float-right title1 font-weight-bold">Phone 1</v-subheader>
             </v-col>
             <v-col class="mt-3">
                 <span class="font-weight-bold" >080102876562</span>
@@ -68,7 +67,7 @@
         </v-row>
         <v-row justify="center" class="mt-n8">
             <v-col>
-                <v-subheader class="float-right title1">Phone 2</v-subheader>
+                <v-subheader class="float-right title1 font-weight-bold">Phone 2</v-subheader>
             </v-col>
             <v-col class="mt-3">
                 <span class="font-weight-bold" >  0809765343</span>
@@ -76,7 +75,7 @@
         </v-row>
         <v-row justify="center" class="mt-n8">
             <v-col>
-                <v-subheader class="float-right title1">Priviledge</v-subheader>
+                <v-subheader class="float-right title1 font-weight-bold">Priviledge</v-subheader>
             </v-col>
             <v-col class="mt-3">
                 <v-select solo style="width:40%"
