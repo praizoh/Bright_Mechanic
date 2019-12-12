@@ -16,19 +16,17 @@ export const item={
    
     actions :{
        async items( { commit }){
-         const response = await axios.post('/login');
-           
-           commit('dealers');
+         const response = await axios.get('/items');
+           items= response.data.items
+           console.log(items)
+           commit('setItems', items);
          },
    },
    
-   //  mutations: {
-       // dealers(state,dealers){
-           // state.dealers=dealers;
-           
-           // alert("login details confirmed")
-           // router.push('/dealers');
-       // }
-   // }
+  mutations: {
+      setItems(state,items){
+      state.items=items;  
+      }
+  }
 }
 

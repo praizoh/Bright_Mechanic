@@ -60,12 +60,6 @@
                                     <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Phone</v-subheader>
                                     <v-card-text class="mt-n4 font-weight-black res2">{{dealer.phonePri}}</v-card-text>
                                 </v-col>
-                                    <!-- <v-col cols="12" lg="2" md="6" sm="6" class="mt-n2">
-                                    <v-btn icon class="float-right mr-2">
-                                        <v-icon color="red">mdi-delete</v-icon>
-                                    </v-btn>
-                                    
-                                </v-col> -->
                                 
                             </v-row>
                 
