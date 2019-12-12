@@ -150,7 +150,16 @@ export default {
     items(){
     return this.$store.state.item.items;
     }
-  }
+  },
+   created(){
+    this.$store.dispatch("items")
+      .then((success)=>{
+        alert(success);
+      })
+      .catch((error)=>{
+        alert(error);
+      });
+    },
     
 }
 </script>

@@ -45,20 +45,20 @@
                             <v-row justify="space-around">
                                 <v-col cols="12" lg="5" md="5" sm="12" class="mt-n4">
                                         <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Company Name</v-subheader>
-                                    <v-card-text class="mt-n4 font-weight-black res2 text-truncate">{{dealer.companyName}}</v-card-text>
+                                    <v-card-text class="mt-n4 font-weight-black res2 text-truncate">{{dealer.name}}</v-card-text>
                                 </v-col>
                                 <v-col cols="12" lg="4" md="4" sm="12" class="mt-n4">
                                     <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Address</v-subheader>
                                     <v-tooltip bottom color="#080838">
                                         <template v-slot:activator="{ on }">
-                                            <v-card-text class="mt-n4 font-weight-black res2 text-truncate" v-on="on">{{dealer.Address}}</v-card-text>
+                                            <v-card-text class="mt-n4 font-weight-black res2 text-truncate" v-on="on">{{dealer.address}}</v-card-text>
                                             </template>
-                                            <span>{{dealer.Address}}</span>
+                                            <span>{{dealer.address}}</span>
                                     </v-tooltip>  
                                 </v-col>
                                 <v-col cols="12" lg="3" md="3" sm="12" class="mt-n4">
                                     <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Phone</v-subheader>
-                                    <v-card-text class="mt-n4 font-weight-black res2">{{dealer.Phone}}</v-card-text>
+                                    <v-card-text class="mt-n4 font-weight-black res2">{{dealer.phonePri}}</v-card-text>
                                 </v-col>
                                     <!-- <v-col cols="12" lg="2" md="6" sm="6" class="mt-n2">
                                     <v-btn icon class="float-right mr-2">
@@ -88,15 +88,6 @@
                             </v-card>
                         </v-dialog>
                     </v-col>
-                    <!-- <v-expand-transition>
-                        <span
-                            v-if="hover"
-                            class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
-                            style="height: 100%;"
-                        >
-                            $14.99
-                        </span>
-                    </v-expand-transition> -->
                 </v-row>
                 
             </v-hover>
@@ -119,6 +110,15 @@ export default {
          dialog:false,
          hover:false
   }),
+  created(){
+    this.$store.dispatch("dealers")
+      .then((success)=>{
+        alert(success);
+      })
+      .catch((error)=>{
+        alert(error);
+      });
+    },
   computed:{
     dealers(){
     return this.$store.state.dealers.dealers;

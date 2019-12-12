@@ -1,24 +1,22 @@
-// import axios from 'axios'
+import axios from 'axios'   
 // import router from '@/router';
 export const login={
      state : {
         token:localStorage.getItem("token") || '',
-        loggedUser:''
+        loggedUser:{}
     },
     
     actions :{
         async Login( { commit }, payload){
-            // const response = await axios.post('/login', payload);
-            // const token = data.token
-            // const loggedUser = data.user
-            const loggedUser= {
-                name:"Ade",
-                id:7
-            }
-            const token = 123
+            alert(payload.username)
+            alert(payload.password)
+            let data={}
+            const headers=payload
+            const response = await axios.post('/userauth', data, {headers:headers});
+            const token = response.data.token
+            alert(token)
+            const loggedUser = response.data.user
             localStorage.setItem("token", token)
-            alert (payload.username);
-            alert (payload.password);
             commit('setToken', token)
             commit('setLoggedUser', loggedUser)
         },

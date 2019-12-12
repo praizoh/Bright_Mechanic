@@ -1,5 +1,5 @@
-// import axios from 'axios'
-// import router from '@/router';
+import axios from 'axios'
+import router from '@/router';
 export const item={
     state : {
        item: {},
@@ -14,13 +14,13 @@ export const item={
     ],
    },
    
-   //  actions :{
-       // async dealers( { commit }){
-       //     // const response = await axios.post('http://localhost:3000/login', {username,password});
+    actions :{
+       async items( { commit }){
+         const response = await axios.post('/login');
            
-       //     commit('dealers');
-       //   },
-   // },
+           commit('dealers');
+         },
+   },
    
    //  mutations: {
        // dealers(state,dealers){
