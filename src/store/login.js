@@ -16,6 +16,7 @@ export const login={
             const token = response.data.token
             alert(token)
             const loggedUser = response.data.user
+            alert(loggedUser.firstname)
             localStorage.setItem("token", token)
             commit('setToken', token)
             commit('setLoggedUser', loggedUser)
@@ -24,7 +25,8 @@ export const login={
     
     mutations: {
         setLoggedUser(state,loggedUser){
-        state.loggedUser=loggedUser;           
+        state.loggedUser=loggedUser; 
+        alert(state.loggedUser.lastname)          
         alert("login details confirmed")
         },
         setToken(state,token){

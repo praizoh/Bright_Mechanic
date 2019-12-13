@@ -94,8 +94,7 @@ export default {
   },
     created(){
     this.$store.dispatch("User")
-      .then((success)=>{
-        alert(success);
+      .then(()=>{
       })
       .catch((error)=>{
         alert(error);

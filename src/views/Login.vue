@@ -52,7 +52,6 @@ export default {
             let password=this.password
             this.$store.dispatch('Login', {username, password})
             .then(()=>this.$router.push('/dealers'))
-            // .catch(err=> console.log(err))
         }
     }
 }

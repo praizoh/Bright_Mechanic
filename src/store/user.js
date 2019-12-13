@@ -13,6 +13,16 @@ export const user={
         console.log(users)
         commit('setUsers', users);
     },
+    // to create users
+    async postUsers( { commit },payload ){
+        try{
+            const response = await axios.post('/users', {payload});
+            console.log(response.data)
+        }catch(error){
+            alert(error)
+            console.log(error)
+        }
+    },
 },
 
 mutations: {

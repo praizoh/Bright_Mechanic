@@ -22,6 +22,7 @@
       <v-list-item-content>
         <v-list-item-title class='font-regular white--text' >
           {{link.text}}
+          <!-- v-if="loggedUser.userGroups[0]=='role-domain-admin'" -->
         </v-list-item-title>
       </v-list-item-content>
     </v-list-item>
@@ -40,7 +41,7 @@
 </template>
 
 <script>
-
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
@@ -58,6 +59,9 @@ export default {
                 
             ],
   }),
+  computed: mapState([
+    'loggedUser'
+  ])
 };
 </script>
 <style scoped>

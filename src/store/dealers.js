@@ -18,6 +18,17 @@ export const dealers={
         //     commit ('setDealerById', dealer)
         //     // console.log(response.data);
         //   },
+
+        async postDealers( { commit },payload ){
+            try{
+                var bodyFormData = new FormData();
+                const response = await axios.post('/dealers', {payload});
+                console.log(response.data)
+            }catch(error){
+                alert(error)
+                console.log(error)
+            }
+        },
     },
 
     mutations: {

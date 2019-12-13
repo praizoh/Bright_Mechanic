@@ -43,7 +43,7 @@
                                 <v-subheader class="text-center ml-12 res1">Brand</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
-                                <v-text-field outlined color="#B1AFCE" dense name="brand" required v-model="brand" :rules="inputRules"  type="text" style="width:50%;font-weight:bold"> </v-text-field>
+                                <v-text-field outlined color="#B1AFCE" dense name="brand" v-model="brand" :rules="inputRules"  type="text" style="width:50%;font-weight:bold"> </v-text-field>
                             </v-col>
                         </v-row>
                         <v-row no-gutters>
@@ -137,7 +137,8 @@ export default {
             gender:"",
             priviledge:"",
             profileImg:"",
-            inputRules: [v => !!v || 'Fill this field']
+            inputRules: [v => !!v || 'Fill this field'],
+            role:['Admin', 'User']
         }
      
     },
@@ -145,6 +146,33 @@ export default {
         submit(){
             if(this.$refs.form.validate()){
                 alert('submitted')
+                let payload ={
+                    firstname: this.firstname,
+                    lastname:  this.lastname,
+                    phonePri:  this.phonePri,
+                    phoneSec:  this.phoneSec,
+                    email:     this.email,
+                    gender:    this.gender,
+                    priviledge:this.priviledge
+                }
+
+                this.$store.dispatch('postUsers', payload)
+                .then((success)=>{
+                    this.firstname=''
+                    this.lastname=''
+                    this.phonePri=''
+
+                    this.phoneSec=''
+
+                    this.email=''
+
+                    this.gender=''
+
+                    this.priviledge=''
+                })
+                .catch((error)=>{
+                    alert(error)
+                })
             }
         }
     }

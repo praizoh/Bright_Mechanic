@@ -106,8 +106,7 @@ export default {
   }),
   created(){
     this.$store.dispatch("dealers")
-      .then((success)=>{
-        alert(success);
+      .then(()=>{
       })
       .catch((error)=>{
         alert(error);
