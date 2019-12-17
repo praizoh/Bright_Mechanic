@@ -5,12 +5,12 @@
         
         <v-toolbar color="white" class="mb-0" height="30" flat>
             <v-toolbar-title class="res1 font-weight-black">
-                Manage Users/ Add User
+                Manage Users/ Edit User
             </v-toolbar-title>
         </v-toolbar>
         
         <v-container fill-width>
-            <v-card-text class="res1 font-weight-bold title-1" > Add User</v-card-text>
+            <v-card-text class="res1 font-weight-bold title-1" > Edit User</v-card-text>
             <v-card style="width:80%" flat>
                 <!-- <div > -->
                     <v-form class="mt-5" ref="form">

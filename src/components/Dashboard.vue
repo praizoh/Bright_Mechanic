@@ -17,7 +17,7 @@
   <v-list class="mt-12 ml-8" height="70">
     <v-list-item  v-for="link in links" :key="link.text" router :to="link.route">
       <v-list-item-icon>
-        <v-icon color="white" v-text="link.icon"></v-icon>
+        <font-awesome-icon color="white" :icon="link.icon" />
       </v-list-item-icon>
       <v-list-item-content>
         <v-list-item-title class='font-regular white--text' >
@@ -26,9 +26,9 @@
         </v-list-item-title>
       </v-list-item-content>
     </v-list-item>
-    <v-list-item style="margin-top:200px">
+    <v-list-item style="margin-top:40vh">
       <v-list-item-icon>
-        <v-icon color="white">mdi-logout</v-icon>
+        <font-awesome-icon color="white" icon="power-off" />
       </v-list-item-icon>
       <v-list-item-content>
         <v-list-item-title class='font-regular white--text'>Logout</v-list-item-title>
@@ -52,10 +52,10 @@ export default {
     
     drawer: null,
       links:[
-                { text: 'Items',  route:'/item', icon:'mdi-tools' },
-                { text: 'Dealers',  route: '/dealers', icon:'mdi-account' },
-                { text: 'Profile',  route:'/profile', icon:'mdi-account' },
-                { text: 'Manage Users',  route:'/manageUsers', icon:'mdi-account' },
+                { text: 'Items',  route:'/item', icon:'tools' },
+                { text: 'Dealers',  route: '/dealers', icon:'people-carry' },
+                { text: 'Profile',  route:'/profile', icon:'user' },
+                { text: 'Manage Users',  route:'/manageUsers', icon:'user-cog' },
                 
             ],
   }),

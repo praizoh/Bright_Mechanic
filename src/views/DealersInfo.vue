@@ -356,73 +356,14 @@ export default {
             dialog3:false,
             dialog_file:false,
         
-            items:[
-                {
-                name:"Fuel Pump",
-                partNumber:"1239064",
-                condition:"New",
-                dealerPrice:"#2890",
-                retailPrice:"#3000",
-                brand:"Toyota Corolla 2011",
-                spec:"Teahy",
-                category:"Mechanical part"
-                },
-                {
-                name:"Toyota Bumper",
-                partNumber:"1239064",
-                condition:"Used",
-                dealerPrice:"#12000",
-                retailPrice:"#3000",
-                brand:"Toyota Corolla 2011",
-                spec:"Teahy",
-                category:"Mechanical part"
-                },
-                {
-                name:"Wind Shield",
-                partNumber:"1239064",
-                condition:"New",
-                dealerPrice:"#50000",
-                retailPrice:"#3000",
-                brand:"Toyota Corolla 2011",
-                spec:"Teahy",
-                category:"Mechanical part"
-                },
-                {
-                name:"Toyota Engine",
-                partNumber:"1239064",
-                condition:"Used",
-                dealerPrice:"#100,500",
-                retailPrice:"#3000",
-                brand:"Toyota Corolla 2011",
-                spec:"Teahy",
-                category:"Mechanical part"
-                },
-                {
-                name:"Silencer doubler",
-                partNumber:"1239064",
-                condition:"New",
-                dealerPrice:"#2890",
-                retailPrice:"#3000",
-                brand:"Toyota Corolla 2011",
-                spec:"Teahy",
-                category:"Mechanical part"
-                },
-                {
-                name:"Car Battery",
-                partNumber:"1239064",
-                condition:"New",
-                dealerPrice:"#16,000",
-                retailPrice:"#3000",
-                brand:"Toyota Corolla 2011",
-                spec:"Teahy",
-                category:"Mechanical part"
-                }
-            ]
         }
     },
     computed:{
     deal(){
     return this.$store.state.dealers.dealer;
+    },
+    items(){
+    return this.$store.state.item.itemByDealer;
     }
   },
 }

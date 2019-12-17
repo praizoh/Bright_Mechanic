@@ -13,6 +13,13 @@ export const user={
         console.log(users)
         commit('setUsers', users);
     },
+    // get user by ID
+    async getUserById ( { commit }, {id} ){
+        const response = await axios.get('/users/' +id);
+        let user = response.data
+        commit ('setUserById', user)
+        console.log(response.data);
+    },
     // to create users
     async postUsers( { commit },payload ){
         var userid=payload.userid
@@ -43,8 +50,8 @@ mutations: {
     setUsers(state, users){
         state.users=users
     },
-    setUserById(state,User){
-        state.user=User;
+    setUserById(state,user){
+        state.user=user;
     }
 }
 }

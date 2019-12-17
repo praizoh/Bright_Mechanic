@@ -21,7 +21,7 @@
         <div v-for="user in users" :key="user.id" no-gutters>
         <v-row>
         <v-col cols="12" lg="11" md="11" sm="11" class="mt-n2">
-        <v-card class="ml-12 mr-12" flat  tile to="manageUsers/manageUserProflie">
+        <v-card class="ml-12 mr-12" flat  tile  @click="getUserById(user.id)">
         
        <v-row justify="space-around">
            <v-col cols="12" lg="3" md="6" sm="6" class="mt-n4">
@@ -100,6 +100,13 @@ export default {
         alert(error);
       });
     },
+    methods:{
+        getUserById(id){
+        alert(id);
+        this.$store.dispatch('getUserById', {id:id})
+        .then(()=>this.$router.push('manageUsers/manageUserProflie'))
+    }
+}
 }
 </script>
 <style scoped>

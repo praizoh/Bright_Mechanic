@@ -41,7 +41,7 @@
             <v-hover v-slot:default="{ hover }">
                 <v-row :class="{'on-hover':hover}">
                     <v-col cols="12" lg="11" md="11" sm="11" class="mt-n2 mb-0 pb-0">
-                        <v-card class="ml-12 mr-12 mb-0" flat  tile   @mouseover="getDealerId(dealer.id)">
+                        <v-card class="ml-12 mr-12 mb-0" flat  tile   @click="getDealerId(dealer.id, dealer.name, dealer.alias)">
                             <v-row justify="space-around">
                                 <v-col cols="12" lg="5" md="5" sm="12" class="mt-n4">
                                         <v-subheader class="res1 font-weight-bold" style="color:#B1AFCE; font-weight:bold">Company Name</v-subheader>
@@ -118,8 +118,9 @@ export default {
     }
   },
   methods:{
-      getDealerId(id){
-        // alert(id);
+      getDealerId(id, name, alias){
+        // alert(alias);
+        this.$store.dispatch('getItemsByDealerName', {dealerName:name, dealerAlias:alias})
         this.$store.dispatch('getDealerById', {id:id})
         .then(()=>this.$router.push('/dealers/dealerInfo'))
       }

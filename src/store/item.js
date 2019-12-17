@@ -3,31 +3,38 @@ import router from '@/router';
 export const item={
     state : {
        item: {},
-       items:[
-        // {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        // {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        // {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        // {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        // {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        // {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-        // {Name:'Benz class c radiator, 5767', State:'New', Dealer:'Chibosu General Mohammed', Price:'50,000', PartNumber:'90856783tghy', RetailPrice:'#55,000', DealerPhone:'0804 456 777', DealerAddress:'No. 89, Salvation Road, Bodija,Ibadan'},
-    ],
+       items:[],
+    itemByDealer:[]
    },
    
     actions :{
        async items( { commit }){
          const response = await axios.get('/items');
            let items= response.data.items;
-           alert(items)
+          //  alert(items)
            console.log(items)
            commit('setItems', items);
-         },
+        },
+
+        async getItemsByDealerName( { commit }, {dealerName, dealerAlias}){
+          const response = await axios.get('/items?dealerName=' +dealerName +'&dealerAlias='+dealerAlias);
+            let items= response.data.items;
+            alert(items[0].name)
+            console.log(items)
+            commit('setItemByDealer', items);
+          },
+
    },
    
   mutations: {
       setItems(state,items){
       state.items=items;  
-      }
+      },
+      
+        setItemByDealer(state,itemByDealer){
+        state.itemByDealer=itemByDealer;  
+        
+    }
   }
 }
 

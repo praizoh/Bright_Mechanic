@@ -21,9 +21,9 @@
         </v-toolbar>
         <v-toolbar flat class="mt-3" height="30">
                     <v-spacer></v-spacer>
-                    <v-btn large class="white--text" to='/item/addItem' style="background-color:#B1AFCE">
+                    <!-- <v-btn large class="white--text" to='/item/addItem' style="background-color:#B1AFCE">
                         <v-icon>mdi-plus</v-icon> <span > Add Items</span>
-                    </v-btn>
+                    </v-btn> -->
                 </v-toolbar>
         <v-container fill-width>
             <v-card style="width:80%" class="mt-n5" flat>

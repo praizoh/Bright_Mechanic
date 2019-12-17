@@ -26,7 +26,7 @@
         </v-row>
         <v-row justify="center" class="ml-12 mr-n12 mt-n6">
             <div class="ml-12 mr-n12 mb-6">
-                <v-btn icon class="ml-10">
+                <v-btn icon class="ml-10" to="/manageUsers/editUser">
                     <v-icon color="#DADADA" >mdi-pencil</v-icon>
                 </v-btn>
                 
@@ -38,7 +38,7 @@
                 <v-subheader class="float-right title1 font-weight-bold">Name</v-subheader>
             </v-col>
             <v-col class="mt-3">
-                <span class="font-weight-bold" style="color:#292929">Richard Somto</span>
+                <span class="font-weight-bold" style="color:#292929">{{user.firstname}}&nbsp;{{user.lastname}}</span>
             </v-col>
         </v-row>
         <v-row justify="center" class="mt-n8">
@@ -46,7 +46,7 @@
                 <v-subheader class="float-right title1 font-weight-bold">Username</v-subheader>
             </v-col>
             <v-col class="mt-3">
-                <span class="font-weight-bold">Somtomana</span>
+                <span class="font-weight-bold">{{user.userid}}</span>
             </v-col>
         </v-row>
         <v-row justify="center" class="mt-n8">
@@ -54,7 +54,7 @@
                 <v-subheader class="float-right title1 font-weight-bold">Email</v-subheader>
             </v-col>
             <v-col class="mt-3">
-                <span class="font-weight-bold">Somtomana@gmail.com</span>
+                <span class="font-weight-bold">{{user.email}}</span>
             </v-col>
         </v-row>
         <v-row justify="center" class="mt-n8">
@@ -62,7 +62,7 @@
                 <v-subheader class="float-right title1 font-weight-bold">Phone 1</v-subheader>
             </v-col>
             <v-col class="mt-3">
-                <span class="font-weight-bold" >080102876562</span>
+                <span class="font-weight-bold" >{{user.phonePri}}</span>
             </v-col>
         </v-row>
         <v-row justify="center" class="mt-n8">
@@ -70,7 +70,7 @@
                 <v-subheader class="float-right title1 font-weight-bold">Phone 2</v-subheader>
             </v-col>
             <v-col class="mt-3">
-                <span class="font-weight-bold" >  0809765343</span>
+                <span class="font-weight-bold" > {{user.phoneSec}} </span>
             </v-col>
         </v-row>
         <v-row justify="center" class="mt-n8">
@@ -78,9 +78,11 @@
                 <v-subheader class="float-right title1 font-weight-bold">Priviledge</v-subheader>
             </v-col>
             <v-col class="mt-3">
-                <v-select solo style="width:40%"
-                :items="roles">
-
+                <v-select solo style="width:60%"
+                :items="user.userGroups"
+                dense
+                >
+                
                 </v-select>
             </v-col>
         </v-row>
@@ -102,6 +104,11 @@ export default {
             dialog:false,
             roles:['Admin', 'Member']
         }
+    },
+    computed:{
+        user(){
+        return this.$store.state.user.user;
+    },
     }
     
 }
