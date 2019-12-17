@@ -67,7 +67,7 @@
                                 <v-subheader class="text-center ml-12 res1">Address</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
-                                <v-text-area outlined color="#B1AFCE" dense name="address" required v-model="address" :rules="inputRules"  type="text" style="font-weight:bold"> </v-text-area>
+                                <v-textarea outlined color="#B1AFCE" dense name="address" required v-model="address" :rules="inputRules"  type="text" style="font-weight:bold"> </v-textarea>
                             </v-col>
                         </v-row>
                         <v-row no-gutters>
@@ -75,7 +75,7 @@
                                 <v-subheader class="text-center res1 ml-12">Note</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
-                                <v-text-area outlined color="#B1AFCE" dense name="note" required v-model="note"  type="text" style="font-weight:bold" value=""> </v-text-area>
+                                <v-textarea outlined color="#B1AFCE" dense name="note" required v-model="note"  :rules="inputRules" type="text" style="font-weight:bold" value=""> </v-textarea>
                             </v-col>
                         </v-row>
                         <v-row no-gutters>
@@ -83,7 +83,7 @@
                                 <v-subheader class="text-center ml-12 res1">Description</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
-                                <v-text-area outlined dense color="#B1AFCE" name="description" required v-model="description" :rules="inputRules"  type="text" style="font-weight:bold"> </v-text-area>
+                                <v-textarea outlined dense color="#B1AFCE" name="description" required v-model="description" :rules="inputRules"  type="text" style="font-weight:bold"> </v-textarea>
                             </v-col>
                         </v-row>
                         <v-row no-gutters>
@@ -94,21 +94,22 @@
                                 
                                 <v-file-input
                                     accept='image/*'
-                                    outlined dense style=" font-weight:bold"
-                                    prepend-outer-icon="mdi-camera"
-                                    v-model="image"
+                                    outlined=""
+                                    label="Upload Picture" 
+                                    dense 
+                                    style=" font-weight:bold"
+                                    
                                     color="#B1AFCE"
                                     @change="onFileChange($event)"
                                 ></v-file-input>
-                                <div class="mt-n5 disable"><v-btn large class="white--text mt-n12 mb-12" color="#080838">Choose Picture</v-btn></div>
                             </v-col>
                         </v-row>
                         
-                        <v-row class="mt-n6">
+                        <v-row class="">
                             
                             <v-col cols="12" sm="12" md="12" class="mt-n6">
                                 <v-card-text class="text-right">
-                                 <v-btn large class="white--text " color="#080838" @click="submit">Submit</v-btn>
+                                 <v-btn large class="white--text " color="#080838" @click="submit()">Submit</v-btn>
                                 </v-card-text>
                                 
                             </v-col>
@@ -135,7 +136,7 @@ export default {
     },
      data() {
         return{
-            dealerName:"",
+            dealerName:'Benson Car Parts',
             alias:"",
             phoneNumber:"",
             email:"",
@@ -143,6 +144,7 @@ export default {
             note:"",
             description:"",
             image:"",
+            domain:"test/test",
             inputRules: [v => !!v || 'Fill this field']
             // ,
         //   (v) => v && v.length <= 3 || 'Field must be less than 3 characters'
@@ -155,18 +157,21 @@ export default {
             console.log(this.image)
         },
         submit(){
-            if(this.$refs.form.validate()){
+            // if(this.$refs.form.validate()){
+            {
               //  console.log(this.itemName)
                 alert('submitted')
-                payload={
+                let payload={}
+                payload.dealer={
                     name:this.dealerName,
                     alias:this.alias,
-                    phoneNumber:this.phoneNumber,
+                    phonePri:this.phoneNumber,
                     email:this.email,
                     address:this.address,
                     note:this.note,
                     description:this.description,
-                    image:this.image
+                    imgUr:'pics.jpg',
+                    domain:this.domain
                 }
                 console.log(payload)
                 this.$store.dispatch('postDealers', payload)
@@ -185,6 +190,9 @@ export default {
                     alert(error)
                 })
             }
+            // else{
+            //     alert('no')
+            // }
         }
     }
     

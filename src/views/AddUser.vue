@@ -19,7 +19,7 @@
                                 <v-subheader class="text-center ml-12 res1">UserName</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
-                                <v-text-field res2 outlined dense name="username" color="#B1AFCE" required v-model="userid" type="text" style="font-weight:bold; width:50%" :rules="inputRules"> </v-text-field>
+                                <v-text-field res2 outlined dense name="userid" color="#B1AFCE" required v-model="userid" type="text" style="font-weight:bold; width:50%" :rules="inputRules"> </v-text-field>
                             </v-col>
                         </v-row>
                         <v-row no-gutters>
@@ -43,7 +43,7 @@
                                 <v-subheader class="text-center ml-12 res1">Brand</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
-                                <v-text-field outlined color="#B1AFCE" dense name="brand" v-model="brand" :rules="inputRules"  type="text" style="width:50%;font-weight:bold"> </v-text-field>
+                                <v-text-field outlined color="#B1AFCE" dense name="brand"  :rules="inputRules"  type="text" style="width:50%;font-weight:bold"> </v-text-field>
                             </v-col>
                         </v-row>
                         <v-row no-gutters>
@@ -75,7 +75,7 @@
                                 <v-subheader class="text-center ml-12 res1">Password</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
-                                <v-text-field outlined dense name="password" color="#B1AFCE" required v-model="password" :rules="inputRules"  type="text" style="width:50%;font-weight:bold"> </v-text-field>
+                                <v-text-field outlined dense name="password" color="#B1AFCE" required  :rules="inputRules"  type="text" style="width:50%;font-weight:bold"> </v-text-field>
                             </v-col>
                         </v-row>
                          <v-row no-gutters>
@@ -86,6 +86,7 @@
                             <v-select
                             class="res2"
                             :items="role"
+                            multiple
                             v-model="priviledge"
                             outlined
                             color="#5c246b"
@@ -137,8 +138,9 @@ export default {
             gender:"",
             priviledge:"",
             profileImg:"",
+            domain:'/tes/test',
             inputRules: [v => !!v || 'Fill this field'],
-            role:['Admin', 'User']
+            role:['ROLE_DOMAIN_USER', 'ROLE_DOMAIN_ADMIN']
         }
      
     },
@@ -146,18 +148,22 @@ export default {
         submit(){
             if(this.$refs.form.validate()){
                 alert('submitted')
+                alert(this.userid)
                 let payload ={
+                    userid: this.userid,
                     firstname: this.firstname,
                     lastname:  this.lastname,
                     phonePri:  this.phonePri,
                     phoneSec:  this.phoneSec,
                     email:     this.email,
                     gender:    this.gender,
-                    priviledge:this.priviledge
+                    priviledge:this.priviledge,
+                    domain:this.domain
                 }
 
                 this.$store.dispatch('postUsers', payload)
                 .then((success)=>{
+                    alert('success')
                     this.firstname=''
                     this.lastname=''
                     this.phonePri=''

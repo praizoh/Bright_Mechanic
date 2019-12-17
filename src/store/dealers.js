@@ -12,17 +12,29 @@ export const dealers={
             const dealersData=response.data.dealers
             commit('dealers', dealersData);
         },
-        // async getDealerById ( { commit }, {id} ){
-        //     const response = await axios.get('http://localhost:3000/dealers/' +id);
-        //     // const dealer={ id:1, companyName: 'Benson Car Parts',  Address:'Shop 34, Computer Village, Ikeja, Lagos' , Phone:'0801 000 0000'}
-        //     commit ('setDealerById', dealer)
-        //     // console.log(response.data);
-        //   },
+        async getDealerById ( { commit }, {id} ){
+            const response = await axios.get('/dealers/' +id);
+            let dealer = response.data
+            commit ('setDealerById', dealer)
+            console.log(response.data);
+        },
 
-        async postDealers( { commit },payload ){
+        async postDealers( { commit },payload ){  
+            let dealer={
+                name:payload.dealer.name,
+                alias:payload.dealer.alias,
+                phonePri:payload.dealer.phonePri,
+                email:payload.dealer.email,
+                address:payload.dealer.address,
+                note:payload.dealer.note,
+                description:payload.dealer.description,
+                imgUr:payload.dealer.imgUr,
+                domain:payload.dealer.domain
+            }
+            alert(dealer.name)
+            alert(dealer.alias)
             try{
-                var bodyFormData = new FormData();
-                const response = await axios.post('/dealers', {payload});
+                const response = await axios.post('/signup', {dealer});
                 console.log(response.data)
             }catch(error){
                 alert(error)

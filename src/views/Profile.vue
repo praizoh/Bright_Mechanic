@@ -124,7 +124,12 @@ export default {
         return{
             dialog:false
         }
+    },
+    computed:{
+    dealers(){
+    return this.$store.state.dealers.dealers;
     }
+  },
     
 }
 </script>

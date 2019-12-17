@@ -5,7 +5,7 @@
             <v-toolbar color="white" class="mb-0 mt-2" height="30" flat>
             <v-toolbar-title class="res1 font-weight-black">
                 
-                Dealers/ Dealers Info
+                Dealers/ Dealers deal
             
                 
             </v-toolbar-title>
@@ -24,7 +24,8 @@
             <v-toolbar color="white" class="mb-0 mr-10 mt-4" height="30" flat>
             <v-spacer>
             </v-spacer>
-           <v-btn icon class="mr-n12" to='/dealers/editDealerInfo'>
+           <v-btn icon class="mr-n12" to='/dealers/editDealerdeal.
+           '>
                 <v-icon color="grey">mdi-pencil</v-icon>
                 
             </v-btn>
@@ -46,23 +47,23 @@
                 </v-dialog>
             </v-toolbar>
             <v-container mt-8>
-                <v-card  flat v-for="info in dealer" :key="info.companyName">
+                <v-card  flat>
                     <v-row no-gutters>
                         <v-col cols="12" lg="3" md="6" sm="6">
                             <v-subheader class="res1">Company Name</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="res2 font-weight-black">{{info.companyName}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{deal.name}}</v-card-text>
                         </v-col>
                     
                     </v-row>
                     <v-divider></v-divider>
                     <v-row no-gutters>
                         <v-col cols="12" lg="3" md="6" sm="6">
-                            <v-subheader class="res1">Alis</v-subheader>
+                            <v-subheader class="res1">Alias</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="res2 font-weight-black">{{info.alis}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{deal.alias}}</v-card-text>
                         </v-col>
                     </v-row>
                     <v-divider></v-divider>
@@ -71,7 +72,7 @@
                             <v-subheader class="res1">Phone Number</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="res2 font-weight-black">{{info.phoneNumber}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{deal.phonePri}}</v-card-text>
                         </v-col>
                     
                     </v-row>
@@ -81,7 +82,7 @@
                             <v-subheader class="res1">Email</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="res2 font-weight-black">{{info.email}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{deal.email}}</v-card-text>
                         </v-col>
                     
                     </v-row>
@@ -91,7 +92,7 @@
                             <v-subheader class="res1">Address</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="res2 font-weight-black">{{info.address}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{deal.address}}</v-card-text>
                         </v-col>
                     
                     </v-row>
@@ -101,7 +102,7 @@
                             <v-subheader class="res1">Note</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="res2 font-weight-black">{{info.note}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{deal.note}}</v-card-text>
                         </v-col>
                     </v-row>
                     <v-divider></v-divider>
@@ -110,7 +111,7 @@
                             <v-subheader class="res1">Description</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="res2 font-weight-black">{{info.description}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{deal.description}}</v-card-text>
                         </v-col>
                     
                     </v-row>
@@ -145,7 +146,6 @@
                                     <v-file-input
                                         outlined dense style=" font-weight:bold"
                                         prepend-outer-icon="mdi-camera"
-                                        v-model="itemPicture"
                                         color="#B1AFCE"
                                     ></v-file-input>
                                 </v-col>
@@ -355,20 +355,6 @@ export default {
             dialog2:false,
             dialog3:false,
             dialog_file:false,
-            dealer:[{
-                 companyName:"BENSON Car Parts",
-                 alis:"Uncle Benson Cars",
-                 phoneNumber:"08102872652",
-                 phoneNumber2:"08078676543",
-                 email:"benson@gmail.com",
-                 address:"Shop 34, Computer Vilage, Ikeja, Lagos",
-                 note:"You have to pre order before he delivers goods, and he is a busy person",
-                 description:"Specializes inin Toyota car parts"
-                 
-            }
-            // 192.168.1.102:8080
-               
-            ],
         
             items:[
                 {
@@ -433,7 +419,12 @@ export default {
                 }
             ]
         }
+    },
+    computed:{
+    deal(){
+    return this.$store.state.dealers.dealer;
     }
+  },
 }
 </script>
 

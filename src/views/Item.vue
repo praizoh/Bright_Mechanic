@@ -48,19 +48,19 @@
                     <v-row justify="space-around">
                         <v-col cols="12" lg="3" md="6" sm="6" class="mt-n4">
                             <v-subheader class="res1 font-weight-bold">Name</v-subheader>
-                            <v-card-text class="mt-n4 font-weight-black res2">{{item.Name}}</v-card-text>
+                            <v-card-text class="mt-n4 font-weight-black res2">{{item.name}}</v-card-text>
                         </v-col>
                         <v-col cols="12" lg="2" md="6" sm="6" class="mt-n4">
                             <v-subheader class="res1 font-weight-bold">State</v-subheader>
-                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.State}}</v-card-text>
+                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.condition}}</v-card-text>
                         </v-col>
                         <v-col cols="12" lg="4" md="6" sm="6" class="mt-n4">
                             <v-subheader class="res1 font-weight-bold">Dealer</v-subheader>
-                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.Dealer}}</v-card-text>
+                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.dealer.name}}</v-card-text>
                         </v-col>
                         <v-col cols="12" lg="2" md="6" sm="6" class="mt-n4">
                             <v-subheader class="res1 font-weight-bold">Price</v-subheader>
-                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.Price}}</v-card-text>
+                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.dealerPrice}}</v-card-text>
                         </v-col>
                         <v-col cols="12" lg="1" md="12" sm="12" class="mt-n2">
                             <v-dialog v-model="dialog1" persistent max-width="400" hide-overlay overlay-color="white">
@@ -89,17 +89,17 @@
                     <v-row>
                         <v-col cols="12" lg="5" md="6" sm="12" class="mt-n4">
                             <v-subheader class="res1 font-weight-bold">Part-Number</v-subheader>
-                            <v-card-text class="mt-n4 res2 font-weight-black ">{{item.PartNumber}}</v-card-text>
+                            <v-card-text class="mt-n4 res2 font-weight-black ">{{item.partNumber}}</v-card-text>
                         </v-col>
                         <v-col cols="12" lg="5" md="6" sm="12" class="mt-n4" justify="center">
                             <v-subheader class="res1 font-weight-bold">Retail Price</v-subheader>
-                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.RetailPrice}}</v-card-text>
+                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.retailPrice}}</v-card-text>
                         </v-col>
                     </v-row>
                     <v-row>
                         <v-col cols="12" lg="5" md="6" sm="12" class="mt-n4">
                             <v-subheader class="res1 font-weight-bold">Dealer Phone No.</v-subheader>
-                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.DealerPhone}}</v-card-text>
+                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.dealer.phonePri}}</v-card-text>
                         </v-col>
                         <v-col cols="12" lg="5" md="6" sm="12" class="mt-n4">
                             <v-subheader class="res1 font-weight-bold">Item Datasheet</v-subheader>
@@ -110,7 +110,7 @@
                     <v-row>
                         <v-col cols="12" lg="12" md="12" sm="12" class="mt-n4">
                             <v-subheader class="res1 font-weight-bold">Dealer Address</v-subheader>
-                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.DealerAddress}}</v-card-text>
+                            <v-card-text class="mt-n4 res2 font-weight-black">{{item.dealer.address}}</v-card-text>
                         </v-col>
                     </v-row>
                     </v-col>
