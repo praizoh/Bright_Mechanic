@@ -69,10 +69,10 @@
                     <v-divider></v-divider>
                     <v-row no-gutters>
                         <v-col cols="12" lg="3" md="6" sm="6">
-                            <v-subheader class="res1">Phone Number</v-subheader>
+                            <v-subheader class="res1">Phone Number(s)</v-subheader>
                         </v-col>
                         <v-col cols="12" lg="9" md="6" sm="6">
-                            <v-card-text class="res2 font-weight-black">{{deal.phonePri}}</v-card-text>
+                            <v-card-text class="res2 font-weight-black">{{deal.phonePri}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{deal.phoneSec}}</v-card-text>
                         </v-col>
                     
                     </v-row>

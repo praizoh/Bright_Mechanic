@@ -118,12 +118,12 @@ export default {
     }
   },
   methods:{
-      getDealerId(id, name, alias){
+    getDealerId(id, name, alias){
         // alert(alias);
         this.$store.dispatch('getItemsByDealerName', {dealerName:name, dealerAlias:alias})
         this.$store.dispatch('getDealerById', {id:id})
         .then(()=>this.$router.push('/dealers/dealerInfo'))
-      }
+    }
   }
 }
 </script>

@@ -10,9 +10,13 @@ export const login={
         async Login( { commit }, payload){
             alert(payload.username)
             alert(payload.password)
+            
+            // const basicAuth = 'Basic ' + btoa(`${payload.username}:${payload.password}`);
             let data={}
-            const headers=payload
-            const response = await axios.post('/userauth', data, {headers:headers});
+            // const headers=payload
+            const response = await axios.post('/userauth', data, {auth:{
+                username:payload.username, password:payload.password
+            }});
             const token = response.data.token
             alert(token)
             const loggedUser = response.data.user
@@ -35,3 +39,15 @@ export const login={
     }
 }
 
+// logout({commit}){
+//     return new Promise((resolve, reject) => {
+//       commit('logout')
+//       localStorage.removeItem('token')
+//       delete axios.defaults.headers.common['Authorization']
+//       resolve()
+//     })
+//   }
+// logout(state){
+//     state.status = ''
+//     state.token = ''
+//   },

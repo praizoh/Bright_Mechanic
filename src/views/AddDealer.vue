@@ -33,9 +33,8 @@
                             <v-col cols="12" sm="12" md="3">
                                 <v-subheader class="text-center ml-12 res1">Company Name</v-subheader>
                             </v-col>
-                            <v-col cols="12" xs="12" sm="12" md="8">
-                                <!-- <h4 class="mt-3 res2" >Benson Car Parts</h4> -->
-                                <v-text-field solo flat class="pt-1 pl-0 ml-0" dense name="dealersName" required v-model="dealerName" type="text" style=" font-size:20px; font-weight:bold" :rules="inputRules"  placeholder="Benson Car Parts" readonly="true" color="#B1AFCE"> </v-text-field>
+                            <v-col cols="12" sm="12" md="9">
+                                <v-text-field outlined dense name="dealerName" color="#B1AFCE" required v-model="dealerName" type="text" style=" font-weight:bold" :rules="inputRules"> </v-text-field>
                             </v-col>
                         </v-row>
                         <v-row no-gutters>
@@ -52,6 +51,14 @@
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
                                 <v-text-field color="#B1AFCE" outlined dense name="phoneNumber" required v-model="phoneNumber"  type="text" style="; font-weight:bold" :rules="inputRules"> </v-text-field>
+                            </v-col>
+                        </v-row>
+                        <v-row no-gutters>
+                            <v-col cols="12" sm="12" md="3" >
+                                <v-subheader class="text-center ml-12 res1">Phone Number(2)</v-subheader>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="9">
+                                <v-text-field color="#B1AFCE" outlined dense name="phoneNumber2" required v-model="phoneNumber2"  type="text" style="; font-weight:bold" :rules="inputRules"> </v-text-field>
                             </v-col>
                         </v-row>
                         <v-row no-gutters>
@@ -136,9 +143,10 @@ export default {
     },
      data() {
         return{
-            dealerName:'Benson Car Parts',
+            dealerName:'',
             alias:"",
             phoneNumber:"",
+            phoneNumber2:"",
             email:"",
             address:"",
             note:"",
@@ -166,6 +174,7 @@ export default {
                     name:this.dealerName,
                     alias:this.alias,
                     phonePri:this.phoneNumber,
+                    phoneSec:this.phoneNumber2,
                     email:this.email,
                     address:this.address,
                     note:this.note,

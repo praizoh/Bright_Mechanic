@@ -20,18 +20,21 @@
         <font-awesome-icon color="white" :icon="link.icon" />
       </v-list-item-icon>
       <v-list-item-content>
-        <v-list-item-title class='font-regular white--text' >
+        <v-list-item-title class='font-regular white--text font-weight-bold' >
           {{link.text}}
           <!-- v-if="loggedUser.userGroups[0]=='role-domain-admin'" -->
         </v-list-item-title>
       </v-list-item-content>
     </v-list-item>
     <v-list-item style="margin-top:40vh">
-      <v-list-item-icon>
+      <v-btn icon>
+        <font-awesome-icon color="white" icon="power-off" />    
+      </v-btn>
+      <!-- <v-list-item-icon>
         <font-awesome-icon color="white" icon="power-off" />
-      </v-list-item-icon>
+      </v-list-item-icon> -->
       <v-list-item-content>
-        <v-list-item-title class='font-regular white--text'>Logout</v-list-item-title>
+        <v-list-item-title class='font-regular white--text font-weight-bold'>Logout</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
   </v-list>

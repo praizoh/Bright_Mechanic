@@ -24,6 +24,7 @@ export const dealers={
                 name:payload.dealer.name,
                 alias:payload.dealer.alias,
                 phonePri:payload.dealer.phonePri,
+                phoneSec:payload.dealer.phoneSec,
                 email:payload.dealer.email,
                 address:payload.dealer.address,
                 note:payload.dealer.note,

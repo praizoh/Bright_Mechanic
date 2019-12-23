@@ -24,7 +24,7 @@
                     <v-icon color="#DADADA" >mdi-pencil</v-icon>
                 </v-btn>
                 
-                <v-subheader class="mt-n3 ml-7 title1">Change Picture</v-subheader>  
+                <v-subheader class="mt-n3 ml-7 title1">Edit Profile</v-subheader>  
             </div> 
         </v-row>
         <v-row justify="center" class="mt-n3">
@@ -32,7 +32,7 @@
                 <v-subheader class="float-right title1">Name</v-subheader>
             </v-col>
             <v-col class="mt-3">
-                <span class="font-weight-bold" style="color:#292929">Richard Somto</span>
+                <span class="font-weight-bold" style="color:#292929">{{user.firstname}}&nbsp;&nbsp;&nbsp;{{user.lastname}}</span>
             </v-col>
         </v-row>
         <v-row justify="center" class="mt-n8">
@@ -40,7 +40,7 @@
                 <v-subheader class="float-right title1">Username</v-subheader>
             </v-col>
             <v-col class="mt-3">
-                <span class="font-weight-bold">Somtomana</span>
+                <span class="font-weight-bold">{{user.userid}}</span>
             </v-col>
         </v-row>
         <v-row justify="center" class="mt-n8">
@@ -48,7 +48,7 @@
                 <v-subheader class="float-right title1">Email</v-subheader>
             </v-col>
             <v-col class="mt-3">
-                <span class="font-weight-bold">Somtomana@gmail.com</span>
+                <span class="font-weight-bold">{{user.email}}</span>
             </v-col>
         </v-row>
         <v-row justify="center" class="mt-n8">
@@ -56,7 +56,7 @@
                 <v-subheader class="float-right title1">Phone Number</v-subheader>
             </v-col>
             <v-col class="mt-3">
-                <span class="font-weight-bold" >080102876562  0809765343</span>
+                <span class="font-weight-bold" >{{user.phonePri}}&nbsp;&nbsp;&nbsp; {{user.phoneSec}}</span>
             </v-col>
         </v-row>
         <v-row justify="center" class="mt-n8">
@@ -126,8 +126,8 @@ export default {
         }
     },
     computed:{
-    dealers(){
-    return this.$store.state.dealers.dealers;
+    user(){
+    return this.$store.state.user.loggedUser;
     }
   },
     
