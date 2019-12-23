@@ -30,7 +30,7 @@ export const item={
 
           // to create items
     async postItems( { commit },payload ){
-      var item=payload.name
+      var name=payload.name
       var partNumber=payload.partNumber
       var condition= payload.condition
       var dealerPrice= payload.dealerPrice

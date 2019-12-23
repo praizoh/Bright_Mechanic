@@ -177,7 +177,7 @@ export default {
             brand:"",
             dealerPrice:"",
             retailPrice:"",
-            category:"",
+            category:["injector","Ford"],
             spec:"",
             itemDatasheet:'file.pdf',
             itemPicture:[],
