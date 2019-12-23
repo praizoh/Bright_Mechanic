@@ -4,7 +4,10 @@ export const item={
     state : {
        item: {},
        items:[],
-    itemByDealer:[]
+    itemByDealer:[],
+    categories:[],
+    categoryById:['injector'
+    , 'ford']
    },
    
     actions :{
@@ -21,7 +24,7 @@ export const item={
           const response = await axios.get('/items?dealerName=' +dealerName +'&dealerAlias='+dealerAlias);
             let items= response.data.items;
             alert(items[0].name)
-            console.log(items)
+           console.log(items)
             commit('setItemByDealer', items);
           },
 

@@ -103,7 +103,7 @@
                                 <v-subheader class="text-center ml-12 res1">Category</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
-                                <!-- <v-combobox dark background-color="#370000" :return-object= "false" multiple v-model="category" :items="categories.result"  item-value ="category" item-text="category" label="Select a category or create a new one" filled  ></v-combobox> -->
+                                <v-combobox dark :return-object= "false" multiple v-model="category" :items="categories"  item-value ="category" item-text="category" label="Select a category or create a new one" outlined dense  ></v-combobox>
                                 <!-- <v-text-field outlined dense color="#B1AFCE" name="category" required v-model="category" :rules="inputRules"  type="text" style="font-weight:bold"> </v-text-field> -->
                             </v-col>
                         </v-row>
@@ -185,6 +185,7 @@ export default {
             dataSheetThumbnailUrl:'ford/datasheet/thumbnail.png',
             itemThumbnailUrl:"thumbnail.png",
             domain:"test/test",
+            categories:['ford', 'injector'],
             inputRules: [v => !!v || 'Fill this field']
             // ,
         //   (v) => v && v.length <= 3 || 'Field must be less than 3 characters'

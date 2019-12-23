@@ -64,7 +64,7 @@
                 <v-subheader class="float-right title1">Role</v-subheader>
             </v-col>
             <v-col class="mt-3">
-                <span class="font-weight-bold">Admin</span>
+                <v-card-text class="mt-n4 font-weight-bold ml-n4"><span v-for="(role,n) in user.userGroups" :key="role"><span v-if="n>0">, &nbsp; </span>{{role}} </span></v-card-text>
             </v-col>
         </v-row>
         
@@ -127,7 +127,7 @@ export default {
     },
     computed:{
     user(){
-    return this.$store.state.user.loggedUser;
+    return this.$store.state.login.loggedUser;
     }
   },
     
