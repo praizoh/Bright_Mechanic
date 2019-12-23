@@ -23,8 +23,14 @@ export const item={
           alert('items')
           const response = await axios.get('/items?dealerName=' +dealerName +'&dealerAlias='+dealerAlias);
             let items= response.data.items;
-            alert(items[0].name)
-           console.log(items)
+            // if (items.)
+            // console.log(items)
+            // console.log('items')
+            // alert('items')
+            // alert(items[0].name)
+            // console.log('items')
+            // console.log(items)
+          //  console.log(items)
             commit('setItemByDealer', items);
           },
 
@@ -58,12 +64,17 @@ export const item={
    },
    
   mutations: {
-      setItems(state,items){
-      state.items=items;  
-      },
+    setItems(state,items){
+    state.items=items;  
+    },
       
-        setItemByDealer(state,itemByDealer){
-        state.itemByDealer=itemByDealer;  
+    setItemByDealer(state,itemByDealer){
+     alert("at commit")
+     alert(itemByDealer)
+    state.itemByDealer=itemByDealer; 
+      
+        
+
         
     }
   }
