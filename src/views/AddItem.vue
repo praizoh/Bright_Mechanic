@@ -103,7 +103,7 @@
                                 <v-subheader class="text-center ml-12 res1">Category</v-subheader>
                             </v-col>
                             <v-col cols="12" sm="12" md="9">
-                                <v-combobox dark :return-object= "false" multiple v-model="category" :items="categories"  item-value ="category" item-text="category" label="Select a category or create a new one" outlined dense  ></v-combobox>
+                                <v-combobox  multiple v-model="category" :items="categories"   outlined dense  ></v-combobox>
                                 <!-- <v-text-field outlined dense color="#B1AFCE" name="category" required v-model="category" :rules="inputRules"  type="text" style="font-weight:bold"> </v-text-field> -->
                             </v-col>
                         </v-row>
@@ -115,8 +115,6 @@
                                 
                                 <v-file-input
                                     outlined dense style=" font-weight:bold"
-                                    
-                                    v-model="itemDatasheet"
                                     color="#B1AFCE"
                                 ></v-file-input>
                                 <!-- <div class="mt-n5 disable"><v-btn large class="white--text mt-n12 mb-12" color="#080838">Choose Datasheet</v-btn></div> -->
